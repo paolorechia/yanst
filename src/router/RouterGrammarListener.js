@@ -47,5 +47,32 @@ RouterGrammarListener.prototype.exitInstance = function(ctx) {
 };
 
 
+// Enter a parse tree produced by RouterGrammarParser#route.
+RouterGrammarListener.prototype.enterRoute = function(ctx) {
+};
+
+// Exit a parse tree produced by RouterGrammarParser#route.
+RouterGrammarListener.prototype.exitRoute = function(ctx) {
+};
+
+
+// Enter a parse tree produced by RouterGrammarParser#httpmethod.
+RouterGrammarListener.prototype.enterHttpmethod = function(ctx) {
+};
+
+// Exit a parse tree produced by RouterGrammarParser#httpmethod.
+RouterGrammarListener.prototype.exitHttpmethod = function(ctx) {
+};
+
+
+// Enter a parse tree produced by RouterGrammarParser#args.
+RouterGrammarListener.prototype.enterArgs = function(ctx) {
+};
+
+// Exit a parse tree produced by RouterGrammarParser#args.
+RouterGrammarListener.prototype.exitArgs = function(ctx) {
+};
+
+
 
 exports.RouterGrammarListener = RouterGrammarListener;

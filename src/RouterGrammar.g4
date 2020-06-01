@@ -11,12 +11,17 @@ this.router.get("/", (req, res, next) => {
 
 routerfile: routerline+ ;
 
-routerline: (import_|instance) ;
+routerline: (import_|instance|route) ;
 
 import_ : IMPORT ASTERISK AS (IDENT|EXPRESS) FROM MODULE END_STATEMENT ;
 
 instance: (IDENT| THIS DOT IDENT) EQUAL (IDENT|EXPRESS) DOT 'Router' LPAREN RPAREN END_STATEMENT ;
-// ignore: ()* END_STATEMENT ;
+
+route: (IDENT | THIS DOT IDENT) DOT httpmethod LPAREN QUOTE URLPATH QUOTE COMMA LPAREN args RPAREN ARROW LBRACKET ;
+
+httpmethod: (GET|POST|PUT|DELETE) ;
+
+args: ( IDENT | IDENT ',' )* ;
 
 
 /* expression */
@@ -70,16 +75,27 @@ RPAREN: ')' ;
 
 FROM: 'from' ;
 
+GET: 'get' ;
+
+POST: 'post' ;
+
+PUT: 'put' ;
+
+DELETE: 'delete' ;
+
 NUMBER : [0-9]+ ;
 
 IDENT : [_a-zA-Z]+[_a-zA-Z0-9\-]* ;
 
-PATH : ('\''|'"') '.'* ('/' IDENT)+ '/'* ('\''|'"') ;
+URLPATH : '/' (IDENT|'/')* ;
+
+QUOTE: ('\''|'"') ;
 
 MODULE: ('\''|'"') IDENT ('\''|'"') ;
 
-DONT_CARE_ARGS : '(' IDENT ')' ;
+ARROW: '=>' ;
+
+LBRACKET: '{' ;
 
 ANY: . ;
 
-// ANYTHING : (CONST|LET|VAR|WHITESPACE|EQUAL|DOT|IMPORT|IDENT|NUMBER|PATH)+ ;

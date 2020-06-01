@@ -49,11 +49,36 @@ RouterVisitor.prototype.visitInstance = function (ctx) {
   return null;
 };
 
+RouterVisitor.prototype.visitRoute = function (ctx) {
+  console.log("Visit route definition");
+  this.visitChildren(ctx);
+  console.log(ctx.URLPATH().getText());
+  return null;
+};
+
+RouterVisitor.prototype.visitHttpmethod = function (ctx) {
+  console.log("Visit method definition");
+  if (ctx.GET && ctx.GET()) {
+    console.log(ctx.GET().getText());
+  }
+  if (ctx.POST && ctx.POST()) {
+    console.log(ctx.POST().getText());
+  }
+  if (ctx.PUT && ctx.PUT()) {
+    console.log(ctx.PUT().getText());
+  }
+  if (ctx.DELETE && ctx.DELETE()) {
+    console.log(ctx.DELETE().getText());
+  }
+  return null;
+};
+
 RouterVisitor.prototype.visitRouterfile = function (ctx) {
   console.log("Visit router file");
   this.visitChildren(ctx);
   return null;
 };
+
 
 
 exports.RouterVisitor = RouterVisitor;

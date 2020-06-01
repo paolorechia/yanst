@@ -42,7 +42,9 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
           return 
         }
         // var input = 'import * as express from "express";\n';
-        var input = "this.router = express.Router();\n";
+        // var input = "this.router = express.Router();\n";
+        //var input = 'this.router.get("/", (req, res, next) => {'
+        var input = 'this.router.get("/test", (req, res, next) => {'
         const chars = new antlr4.InputStream(input);
         const lexer = new RouterGrammarLexer.RouterGrammarLexer(chars);
         const tokens = new antlr4.CommonTokenStream(lexer);

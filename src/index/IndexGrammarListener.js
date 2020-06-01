@@ -38,5 +38,14 @@ IndexGrammarListener.prototype.exitRequire = function(ctx) {
 };
 
 
+// Enter a parse tree produced by IndexGrammarParser#useroute.
+IndexGrammarListener.prototype.enterUseroute = function(ctx) {
+};
+
+// Exit a parse tree produced by IndexGrammarParser#useroute.
+IndexGrammarListener.prototype.exitUseroute = function(ctx) {
+};
+
+
 
 exports.IndexGrammarListener = IndexGrammarListener;

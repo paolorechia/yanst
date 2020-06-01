@@ -3,21 +3,18 @@ grammar IndexGrammar;
   Parser Rules
 */
 
-// const cardsRouter = require('./routes/cards')(db);
-
-// const app = express();
-
 // app.use('/users', usersRouter);
-// declaration : (CONST|VAR|LET) WHITESPACE+ IDENT WHITESPACE* SEMICOLON;
-
-
 // indexfile : express;
 
-indexfile : require;
+// indexfile : require;
+
+indexfile : useroute;
 
 express: (CONST|VAR|LET) WHITESPACE+ IDENT WHITESPACE* EQUAL WHITESPACE* EXPRESS WHITESPACE* '(' WHITESPACE* ')' END_STATEMENT ;
 
 require: (CONST|VAR|LET) WHITESPACE+ IDENT WHITESPACE* EQUAL WHITESPACE REQUIRE WHITESPACE* '(' PATH ')' DONT_CARE_ARGS END_STATEMENT ;
+
+useroute: IDENT DOT USE '(' PATH WHITESPACE* COMMA WHITESPACE* IDENT ')' END_STATEMENT ;
 
 /* expression */
 
@@ -34,6 +31,8 @@ END_STATEMENT : WHITESPACE* (NEWLINE | SEMICOLON WHITESPACE* NEWLINE) ;
 
 SEMICOLON: ';' ;
 
+COMMA: ',' ;
+
 CONST : 'const' ;
 
 LET : 'let' ;
@@ -41,6 +40,10 @@ LET : 'let' ;
 VAR : 'var' ;
 
 EQUAL: '=' ;
+
+DOT: '.' ;
+
+USE: 'use' ;
 
 REQUIRE : 'require' ;
 

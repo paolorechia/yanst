@@ -13,7 +13,7 @@ IndexListener = function () {
 
 const symbols = {
   express_app: "",
-  requires: [],
+  requires: {}
 };
 
 // inherit default listener
@@ -30,11 +30,21 @@ IndexListener.prototype.enterRequire = function (ctx) {
   console.log("Entered require");
   const ident = ctx.IDENT().getText();
   const path = ctx.PATH().getText();
-  symbols["requires"].push({
-    ident: ident,
-    path: path.replace(/\"/g, '').replace(/'/g, ''),
-  });
+  symbols["requires"][ident] = {
+    filepath: path.replace(/\"/g, '').replace(/'/g, ''),
+  }
 };
+
+IndexListener.prototype.enterUseroute = function (ctx) {
+  console.log("Entered require");
+  const ident = ctx.IDENT()[1].getText();
+  console.log(ident);
+  const path = ctx.PATH().getText();
+  console.log(path);
+  symbols["requires"][ident] = {
+    urlpath: path.replace(/\"/g, '').replace(/'/g, ''),
+  }
+}
 
 IndexListener.prototype.exitIndexfile = function (ctx) {
   console.log("Finished parsing index file");

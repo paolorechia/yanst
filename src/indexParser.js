@@ -6,7 +6,8 @@ const IndexListener = require('./indexListener').IndexListener;
 
 
 // const input = 'const app = express();\n'
-const input = "const cardsRouter = require('./routes/cards')(db);\n";
+// const input = "const cardsRouter = require('./routes/cards')(db);\n";
+const input = "app.use('/users', usersRouter);\n";
 
 const chars = new antlr4.InputStream(input);
 const lexer = new IndexGrammarLexer.IndexGrammarLexer(chars);

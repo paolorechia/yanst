@@ -29,5 +29,14 @@ IndexGrammarListener.prototype.exitExpress = function(ctx) {
 };
 
 
+// Enter a parse tree produced by IndexGrammarParser#require.
+IndexGrammarListener.prototype.enterRequire = function(ctx) {
+};
+
+// Exit a parse tree produced by IndexGrammarParser#require.
+IndexGrammarListener.prototype.exitRequire = function(ctx) {
+};
+
+
 
 exports.IndexGrammarListener = IndexGrammarListener;

@@ -12,9 +12,9 @@ IndexListener = function () {
 };
 
 const symbols = {
-
-}
-
+  express_app: "",
+  requires: [],
+};
 
 // inherit default listener
 IndexListener.prototype = Object.create(IndexGrammarListener.prototype);
@@ -23,16 +23,22 @@ IndexListener.prototype.constructor = IndexListener;
 // override default listener behavior
 IndexListener.prototype.enterExpress = function (ctx) {
   console.log("Entered express");
-  symbols['express'] = ctx.IDENT().getText();
+  symbols["express_app"] = ctx.IDENT().getText();
 };
 
-IndexListener.prototype.exitExpress = function (ctx) {
-  console.log("Exited express");
+IndexListener.prototype.enterRequire = function (ctx) {
+  console.log("Entered require");
+  const ident = ctx.IDENT().getText();
+  const path = ctx.PATH().getText();
+  symbols["requires"].push({
+    ident: ident,
+    path: path.replace(/\"/g, '').replace(/'/g, ''),
+  });
 };
 
 IndexListener.prototype.exitIndexfile = function (ctx) {
   console.log("Finished parsing index file");
-  console.log("Symbols found:", symbols)
-}
+  console.log("Symbols found:", symbols);
+};
 
 exports.IndexListener = IndexListener;

@@ -60,7 +60,7 @@ var symbolicNames = [ null, null, null, "WHITESPACE", "NEWLINE", "SEMICOLON",
                       "CONST", "LET", "VAR", "EQUAL", "REQUIRE", "IMPORT", 
                       "EXPRESS", "NUMBER", "IDENT" ];
 
-var ruleNames =  [ "index_file", "express" ];
+var ruleNames =  [ "indexfile", "express" ];
 
 function IndexGrammarParser (input) {
 	antlr4.Parser.call(this, input);
@@ -96,11 +96,11 @@ IndexGrammarParser.EXPRESS = 12;
 IndexGrammarParser.NUMBER = 13;
 IndexGrammarParser.IDENT = 14;
 
-IndexGrammarParser.RULE_index_file = 0;
+IndexGrammarParser.RULE_indexfile = 0;
 IndexGrammarParser.RULE_express = 1;
 
 
-function Index_fileContext(parser, parent, invokingState) {
+function IndexfileContext(parser, parent, invokingState) {
 	if(parent===undefined) {
 	    parent = null;
 	}
@@ -109,38 +109,38 @@ function Index_fileContext(parser, parent, invokingState) {
 	}
 	antlr4.ParserRuleContext.call(this, parent, invokingState);
     this.parser = parser;
-    this.ruleIndex = IndexGrammarParser.RULE_index_file;
+    this.ruleIndex = IndexGrammarParser.RULE_indexfile;
     return this;
 }
 
-Index_fileContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-Index_fileContext.prototype.constructor = Index_fileContext;
+IndexfileContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+IndexfileContext.prototype.constructor = IndexfileContext;
 
-Index_fileContext.prototype.express = function() {
+IndexfileContext.prototype.express = function() {
     return this.getTypedRuleContext(ExpressContext,0);
 };
 
-Index_fileContext.prototype.enterRule = function(listener) {
+IndexfileContext.prototype.enterRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
-        listener.enterIndex_file(this);
+        listener.enterIndexfile(this);
 	}
 };
 
-Index_fileContext.prototype.exitRule = function(listener) {
+IndexfileContext.prototype.exitRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
-        listener.exitIndex_file(this);
+        listener.exitIndexfile(this);
 	}
 };
 
 
 
 
-IndexGrammarParser.Index_fileContext = Index_fileContext;
+IndexGrammarParser.IndexfileContext = IndexfileContext;
 
-IndexGrammarParser.prototype.index_file = function() {
+IndexGrammarParser.prototype.indexfile = function() {
 
-    var localctx = new Index_fileContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 0, IndexGrammarParser.RULE_index_file);
+    var localctx = new IndexfileContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 0, IndexGrammarParser.RULE_indexfile);
     try {
         this.enterOuterAlt(localctx, 1);
         this.state = 4;

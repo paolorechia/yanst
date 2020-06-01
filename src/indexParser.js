@@ -12,6 +12,6 @@ const tokens = new antlr4.CommonTokenStream(lexer);
 const parser = new IndexGrammarParser.IndexGrammarParser(tokens);
 parser.buildParseTrees = true;
 
-const tree = parser.express();
+const tree = parser.indexfile();
 const indexListener = new IndexListener();
 antlr4.tree.ParseTreeWalker.DEFAULT.walk(indexListener, tree);

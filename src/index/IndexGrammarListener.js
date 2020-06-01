@@ -11,12 +11,12 @@ function IndexGrammarListener() {
 IndexGrammarListener.prototype = Object.create(antlr4.tree.ParseTreeListener.prototype);
 IndexGrammarListener.prototype.constructor = IndexGrammarListener;
 
-// Enter a parse tree produced by IndexGrammarParser#index_file.
-IndexGrammarListener.prototype.enterIndex_file = function(ctx) {
+// Enter a parse tree produced by IndexGrammarParser#indexfile.
+IndexGrammarListener.prototype.enterIndexfile = function(ctx) {
 };
 
-// Exit a parse tree produced by IndexGrammarParser#index_file.
-IndexGrammarListener.prototype.exitIndex_file = function(ctx) {
+// Exit a parse tree produced by IndexGrammarParser#indexfile.
+IndexGrammarListener.prototype.exitIndexfile = function(ctx) {
 };
 
 

@@ -33,7 +33,7 @@ NUMBER
 IDENT
 
 rule names:
-index_file
+indexfile
 express
 
 

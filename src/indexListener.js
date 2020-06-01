@@ -24,11 +24,15 @@ IndexListener.prototype.constructor = IndexListener;
 IndexListener.prototype.enterExpress = function (ctx) {
   console.log("Entered express");
   symbols['express'] = ctx.IDENT().getText();
-  console.log(symbols);
 };
 
 IndexListener.prototype.exitExpress = function (ctx) {
   console.log("Exited express");
 };
+
+IndexListener.prototype.exitIndexfile = function (ctx) {
+  console.log("Finished parsing index file");
+  console.log("Symbols found:", symbols)
+}
 
 exports.IndexListener = IndexListener;

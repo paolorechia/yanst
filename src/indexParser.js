@@ -25,5 +25,18 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
   const symbols = indexVisitor.visit(tree);
   console.log(symbols);
 
+  Object.keys(symbols['requires']).forEach(
+    (key) => {
+      filepath = symbols['requires'][key]['filepath'] + ".ts";
+      console.log(filepath);
+      fs.readFile(filepath, 'utf8', (err, data) => {
+        if (err) {
+          console.error(err)
+          return 
+        }
+      })
+    }
+  )
+
   // antlr4.tree.ParseTreeWalker.DEFAULT.walk(indexVisitor, tree);
 })

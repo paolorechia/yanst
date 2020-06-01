@@ -6,6 +6,13 @@ const IndexGrammarLexer = require('./index/IndexGrammarLexer');
 const IndexGrammarParser = require('./index/IndexGrammarParser');
 const IndexVisitor = require('./indexVisitor').IndexVisitor;
 
+const RouterGrammarLexer = require('./router/RouterGrammarLexer');
+
+const RouterGrammarParser = require('./router/RouterGrammarParser');
+
+const RouterGrammarVisitor = require('./router/RouterGrammarVisitor');
+
+const RouterVisitor = require('./routerVisitor').RouterVisitor;
 
 
 fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
@@ -34,6 +41,16 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
           console.error(err)
           return 
         }
+        var input = 'import * as express from "express";\n';
+        const chars = new antlr4.InputStream(input);
+        const lexer = new RouterGrammarLexer.RouterGrammarLexer(chars);
+        const tokens = new antlr4.CommonTokenStream(lexer);
+        const parser = new RouterGrammarParser.RouterGrammarParser(tokens);
+        // parser.buildParseTrees = true;
+
+        const tree = parser.routerfile();
+        const routerVisitor = new RouterVisitor();
+        const routes = routerVisitor.visit(tree);
       })
     }
   )

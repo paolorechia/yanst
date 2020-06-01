@@ -1,0 +1,209 @@
+// Generated from RouterGrammar.g4 by ANTLR 4.8
+// jshint ignore: start
+var antlr4 = require('antlr4/index');
+
+
+
+var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
+    "\u0002\u001b\u00bd\b\u0001\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004",
+    "\u0004\t\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t",
+    "\u0007\u0004\b\t\b\u0004\t\t\t\u0004\n\t\n\u0004\u000b\t\u000b\u0004",
+    "\f\t\f\u0004\r\t\r\u0004\u000e\t\u000e\u0004\u000f\t\u000f\u0004\u0010",
+    "\t\u0010\u0004\u0011\t\u0011\u0004\u0012\t\u0012\u0004\u0013\t\u0013",
+    "\u0004\u0014\t\u0014\u0004\u0015\t\u0015\u0004\u0016\t\u0016\u0004\u0017",
+    "\t\u0017\u0004\u0018\t\u0018\u0004\u0019\t\u0019\u0004\u001a\t\u001a",
+    "\u0003\u0002\u0003\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0005\u0004B\n\u0004\u0003\u0005\u0003\u0005\u0003\u0006\u0003\u0006",
+    "\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007",
+    "\u0003\b\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\t\u0003\t\u0003",
+    "\n\u0003\n\u0003\u000b\u0003\u000b\u0003\f\u0003\f\u0003\f\u0003\f\u0003",
+    "\r\u0003\r\u0003\r\u0003\r\u0003\r\u0003\r\u0003\r\u0003\r\u0003\u000e",
+    "\u0003\u000e\u0003\u000e\u0003\u000e\u0003\u000e\u0003\u000e\u0003\u000e",
+    "\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f\u0003\u000f",
+    "\u0003\u000f\u0003\u000f\u0003\u0010\u0003\u0010\u0003\u0010\u0003\u0011",
+    "\u0003\u0011\u0003\u0011\u0003\u0011\u0007\u0011|\n\u0011\f\u0011\u000e",
+    "\u0011\u007f\u000b\u0011\u0003\u0011\u0003\u0011\u0003\u0012\u0003\u0012",
+    "\u0003\u0013\u0003\u0013\u0003\u0013\u0003\u0013\u0003\u0013\u0003\u0014",
+    "\u0003\u0014\u0003\u0014\u0003\u0014\u0003\u0014\u0003\u0015\u0006\u0015",
+    "\u0090\n\u0015\r\u0015\u000e\u0015\u0091\u0003\u0016\u0006\u0016\u0095",
+    "\n\u0016\r\u0016\u000e\u0016\u0096\u0003\u0016\u0007\u0016\u009a\n\u0016",
+    "\f\u0016\u000e\u0016\u009d\u000b\u0016\u0003\u0017\u0003\u0017\u0007",
+    "\u0017\u00a1\n\u0017\f\u0017\u000e\u0017\u00a4\u000b\u0017\u0003\u0017",
+    "\u0003\u0017\u0006\u0017\u00a8\n\u0017\r\u0017\u000e\u0017\u00a9\u0003",
+    "\u0017\u0007\u0017\u00ad\n\u0017\f\u0017\u000e\u0017\u00b0\u000b\u0017",
+    "\u0003\u0017\u0003\u0017\u0003\u0018\u0003\u0018\u0003\u0018\u0003\u0018",
+    "\u0003\u0019\u0003\u0019\u0003\u0019\u0003\u0019\u0003\u001a\u0003\u001a",
+    "\u0002\u0002\u001b\u0003\u0003\u0005\u0004\u0007\u0005\t\u0006\u000b",
+    "\u0007\r\b\u000f\t\u0011\n\u0013\u000b\u0015\f\u0017\r\u0019\u000e\u001b",
+    "\u000f\u001d\u0010\u001f\u0011!\u0012#\u0013%\u0014\'\u0015)\u0016+",
+    "\u0017-\u0018/\u00191\u001a3\u001b\u0003\u0002\b\u0004\u0002\u000b\u000b",
+    "\"\"\u0004\u0002\f\f\u000f\u000f\u0003\u00022;\u0005\u0002C\\aac|\u0007",
+    "\u0002//2;C\\aac|\u0004\u0002$$))\u0002\u00c4\u0002\u0003\u0003\u0002",
+    "\u0002\u0002\u0002\u0005\u0003\u0002\u0002\u0002\u0002\u0007\u0003\u0002",
+    "\u0002\u0002\u0002\t\u0003\u0002\u0002\u0002\u0002\u000b\u0003\u0002",
+    "\u0002\u0002\u0002\r\u0003\u0002\u0002\u0002\u0002\u000f\u0003\u0002",
+    "\u0002\u0002\u0002\u0011\u0003\u0002\u0002\u0002\u0002\u0013\u0003\u0002",
+    "\u0002\u0002\u0002\u0015\u0003\u0002\u0002\u0002\u0002\u0017\u0003\u0002",
+    "\u0002\u0002\u0002\u0019\u0003\u0002\u0002\u0002\u0002\u001b\u0003\u0002",
+    "\u0002\u0002\u0002\u001d\u0003\u0002\u0002\u0002\u0002\u001f\u0003\u0002",
+    "\u0002\u0002\u0002!\u0003\u0002\u0002\u0002\u0002#\u0003\u0002\u0002",
+    "\u0002\u0002%\u0003\u0002\u0002\u0002\u0002\'\u0003\u0002\u0002\u0002",
+    "\u0002)\u0003\u0002\u0002\u0002\u0002+\u0003\u0002\u0002\u0002\u0002",
+    "-\u0003\u0002\u0002\u0002\u0002/\u0003\u0002\u0002\u0002\u00021\u0003",
+    "\u0002\u0002\u0002\u00023\u0003\u0002\u0002\u0002\u00035\u0003\u0002",
+    "\u0002\u0002\u00059\u0003\u0002\u0002\u0002\u0007A\u0003\u0002\u0002",
+    "\u0002\tC\u0003\u0002\u0002\u0002\u000bE\u0003\u0002\u0002\u0002\rG",
+    "\u0003\u0002\u0002\u0002\u000fM\u0003\u0002\u0002\u0002\u0011Q\u0003",
+    "\u0002\u0002\u0002\u0013U\u0003\u0002\u0002\u0002\u0015W\u0003\u0002",
+    "\u0002\u0002\u0017Y\u0003\u0002\u0002\u0002\u0019]\u0003\u0002\u0002",
+    "\u0002\u001be\u0003\u0002\u0002\u0002\u001dl\u0003\u0002\u0002\u0002",
+    "\u001ft\u0003\u0002\u0002\u0002!w\u0003\u0002\u0002\u0002#\u0082\u0003",
+    "\u0002\u0002\u0002%\u0084\u0003\u0002\u0002\u0002\'\u0089\u0003\u0002",
+    "\u0002\u0002)\u008f\u0003\u0002\u0002\u0002+\u0094\u0003\u0002\u0002",
+    "\u0002-\u009e\u0003\u0002\u0002\u0002/\u00b3\u0003\u0002\u0002\u0002",
+    "1\u00b7\u0003\u0002\u0002\u00023\u00bb\u0003\u0002\u0002\u000256\t\u0002",
+    "\u0002\u000267\u0003\u0002\u0002\u000278\b\u0002\u0002\u00028\u0004",
+    "\u0003\u0002\u0002\u00029:\t\u0003\u0002\u0002:;\u0003\u0002\u0002\u0002",
+    ";<\b\u0003\u0002\u0002<\u0006\u0003\u0002\u0002\u0002=B\u0005\u0005",
+    "\u0003\u0002>?\u0005\t\u0005\u0002?@\u0005\u0005\u0003\u0002@B\u0003",
+    "\u0002\u0002\u0002A=\u0003\u0002\u0002\u0002A>\u0003\u0002\u0002\u0002",
+    "B\b\u0003\u0002\u0002\u0002CD\u0007=\u0002\u0002D\n\u0003\u0002\u0002",
+    "\u0002EF\u0007.\u0002\u0002F\f\u0003\u0002\u0002\u0002GH\u0007e\u0002",
+    "\u0002HI\u0007q\u0002\u0002IJ\u0007p\u0002\u0002JK\u0007u\u0002\u0002",
+    "KL\u0007v\u0002\u0002L\u000e\u0003\u0002\u0002\u0002MN\u0007n\u0002",
+    "\u0002NO\u0007g\u0002\u0002OP\u0007v\u0002\u0002P\u0010\u0003\u0002",
+    "\u0002\u0002QR\u0007x\u0002\u0002RS\u0007c\u0002\u0002ST\u0007t\u0002",
+    "\u0002T\u0012\u0003\u0002\u0002\u0002UV\u0007?\u0002\u0002V\u0014\u0003",
+    "\u0002\u0002\u0002WX\u00070\u0002\u0002X\u0016\u0003\u0002\u0002\u0002",
+    "YZ\u0007w\u0002\u0002Z[\u0007u\u0002\u0002[\\\u0007g\u0002\u0002\\\u0018",
+    "\u0003\u0002\u0002\u0002]^\u0007t\u0002\u0002^_\u0007g\u0002\u0002_",
+    "`\u0007s\u0002\u0002`a\u0007w\u0002\u0002ab\u0007k\u0002\u0002bc\u0007",
+    "t\u0002\u0002cd\u0007g\u0002\u0002d\u001a\u0003\u0002\u0002\u0002ef",
+    "\u0007k\u0002\u0002fg\u0007o\u0002\u0002gh\u0007r\u0002\u0002hi\u0007",
+    "q\u0002\u0002ij\u0007t\u0002\u0002jk\u0007v\u0002\u0002k\u001c\u0003",
+    "\u0002\u0002\u0002lm\u0007g\u0002\u0002mn\u0007z\u0002\u0002no\u0007",
+    "r\u0002\u0002op\u0007t\u0002\u0002pq\u0007g\u0002\u0002qr\u0007u\u0002",
+    "\u0002rs\u0007u\u0002\u0002s\u001e\u0003\u0002\u0002\u0002tu\u0007c",
+    "\u0002\u0002uv\u0007u\u0002\u0002v \u0003\u0002\u0002\u0002wx\u0007",
+    "1\u0002\u0002xy\u00071\u0002\u0002y}\u0003\u0002\u0002\u0002z|\n\u0003",
+    "\u0002\u0002{z\u0003\u0002\u0002\u0002|\u007f\u0003\u0002\u0002\u0002",
+    "}{\u0003\u0002\u0002\u0002}~\u0003\u0002\u0002\u0002~\u0080\u0003\u0002",
+    "\u0002\u0002\u007f}\u0003\u0002\u0002\u0002\u0080\u0081\b\u0011\u0002",
+    "\u0002\u0081\"\u0003\u0002\u0002\u0002\u0082\u0083\u0007,\u0002\u0002",
+    "\u0083$\u0003\u0002\u0002\u0002\u0084\u0085\u0005+\u0016\u0002\u0085",
+    "\u0086\u0007<\u0002\u0002\u0086\u0087\u0003\u0002\u0002\u0002\u0087",
+    "\u0088\b\u0013\u0002\u0002\u0088&\u0003\u0002\u0002\u0002\u0089\u008a",
+    "\u0007h\u0002\u0002\u008a\u008b\u0007t\u0002\u0002\u008b\u008c\u0007",
+    "q\u0002\u0002\u008c\u008d\u0007o\u0002\u0002\u008d(\u0003\u0002\u0002",
+    "\u0002\u008e\u0090\t\u0004\u0002\u0002\u008f\u008e\u0003\u0002\u0002",
+    "\u0002\u0090\u0091\u0003\u0002\u0002\u0002\u0091\u008f\u0003\u0002\u0002",
+    "\u0002\u0091\u0092\u0003\u0002\u0002\u0002\u0092*\u0003\u0002\u0002",
+    "\u0002\u0093\u0095\t\u0005\u0002\u0002\u0094\u0093\u0003\u0002\u0002",
+    "\u0002\u0095\u0096\u0003\u0002\u0002\u0002\u0096\u0094\u0003\u0002\u0002",
+    "\u0002\u0096\u0097\u0003\u0002\u0002\u0002\u0097\u009b\u0003\u0002\u0002",
+    "\u0002\u0098\u009a\t\u0006\u0002\u0002\u0099\u0098\u0003\u0002\u0002",
+    "\u0002\u009a\u009d\u0003\u0002\u0002\u0002\u009b\u0099\u0003\u0002\u0002",
+    "\u0002\u009b\u009c\u0003\u0002\u0002\u0002\u009c,\u0003\u0002\u0002",
+    "\u0002\u009d\u009b\u0003\u0002\u0002\u0002\u009e\u00a2\t\u0007\u0002",
+    "\u0002\u009f\u00a1\u00070\u0002\u0002\u00a0\u009f\u0003\u0002\u0002",
+    "\u0002\u00a1\u00a4\u0003\u0002\u0002\u0002\u00a2\u00a0\u0003\u0002\u0002",
+    "\u0002\u00a2\u00a3\u0003\u0002\u0002\u0002\u00a3\u00a7\u0003\u0002\u0002",
+    "\u0002\u00a4\u00a2\u0003\u0002\u0002\u0002\u00a5\u00a6\u00071\u0002",
+    "\u0002\u00a6\u00a8\u0005+\u0016\u0002\u00a7\u00a5\u0003\u0002\u0002",
+    "\u0002\u00a8\u00a9\u0003\u0002\u0002\u0002\u00a9\u00a7\u0003\u0002\u0002",
+    "\u0002\u00a9\u00aa\u0003\u0002\u0002\u0002\u00aa\u00ae\u0003\u0002\u0002",
+    "\u0002\u00ab\u00ad\u00071\u0002\u0002\u00ac\u00ab\u0003\u0002\u0002",
+    "\u0002\u00ad\u00b0\u0003\u0002\u0002\u0002\u00ae\u00ac\u0003\u0002\u0002",
+    "\u0002\u00ae\u00af\u0003\u0002\u0002\u0002\u00af\u00b1\u0003\u0002\u0002",
+    "\u0002\u00b0\u00ae\u0003\u0002\u0002\u0002\u00b1\u00b2\t\u0007\u0002",
+    "\u0002\u00b2.\u0003\u0002\u0002\u0002\u00b3\u00b4\t\u0007\u0002\u0002",
+    "\u00b4\u00b5\u0005+\u0016\u0002\u00b5\u00b6\t\u0007\u0002\u0002\u00b6",
+    "0\u0003\u0002\u0002\u0002\u00b7\u00b8\u0007*\u0002\u0002\u00b8\u00b9",
+    "\u0005+\u0016\u0002\u00b9\u00ba\u0007+\u0002\u0002\u00ba2\u0003\u0002",
+    "\u0002\u0002\u00bb\u00bc\u000b\u0002\u0002\u0002\u00bc4\u0003\u0002",
+    "\u0002\u0002\u000b\u0002A}\u0091\u0096\u009b\u00a2\u00a9\u00ae\u0003",
+    "\b\u0002\u0002"].join("");
+
+
+var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
+
+var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new antlr4.dfa.DFA(ds, index); });
+
+function RouterGrammarLexer(input) {
+	antlr4.Lexer.call(this, input);
+    this._interp = new antlr4.atn.LexerATNSimulator(this, atn, decisionsToDFA, new antlr4.PredictionContextCache());
+    return this;
+}
+
+RouterGrammarLexer.prototype = Object.create(antlr4.Lexer.prototype);
+RouterGrammarLexer.prototype.constructor = RouterGrammarLexer;
+
+Object.defineProperty(RouterGrammarLexer.prototype, "atn", {
+        get : function() {
+                return atn;
+        }
+});
+
+RouterGrammarLexer.EOF = antlr4.Token.EOF;
+RouterGrammarLexer.WHITESPACE = 1;
+RouterGrammarLexer.NEWLINE = 2;
+RouterGrammarLexer.END_STATEMENT = 3;
+RouterGrammarLexer.SEMICOLON = 4;
+RouterGrammarLexer.COMMA = 5;
+RouterGrammarLexer.CONST = 6;
+RouterGrammarLexer.LET = 7;
+RouterGrammarLexer.VAR = 8;
+RouterGrammarLexer.EQUAL = 9;
+RouterGrammarLexer.DOT = 10;
+RouterGrammarLexer.USE = 11;
+RouterGrammarLexer.REQUIRE = 12;
+RouterGrammarLexer.IMPORT = 13;
+RouterGrammarLexer.EXPRESS = 14;
+RouterGrammarLexer.AS = 15;
+RouterGrammarLexer.LINE_COMMENT = 16;
+RouterGrammarLexer.ASTERISK = 17;
+RouterGrammarLexer.PROPERTY = 18;
+RouterGrammarLexer.FROM = 19;
+RouterGrammarLexer.NUMBER = 20;
+RouterGrammarLexer.IDENT = 21;
+RouterGrammarLexer.PATH = 22;
+RouterGrammarLexer.MODULE = 23;
+RouterGrammarLexer.DONT_CARE_ARGS = 24;
+RouterGrammarLexer.ANY = 25;
+
+RouterGrammarLexer.prototype.channelNames = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
+
+RouterGrammarLexer.prototype.modeNames = [ "DEFAULT_MODE" ];
+
+RouterGrammarLexer.prototype.literalNames = [ null, null, null, null, "';'", 
+                                              "','", "'const'", "'let'", 
+                                              "'var'", "'='", "'.'", "'use'", 
+                                              "'require'", "'import'", "'express'", 
+                                              "'as'", null, "'*'", null, 
+                                              "'from'" ];
+
+RouterGrammarLexer.prototype.symbolicNames = [ null, "WHITESPACE", "NEWLINE", 
+                                               "END_STATEMENT", "SEMICOLON", 
+                                               "COMMA", "CONST", "LET", 
+                                               "VAR", "EQUAL", "DOT", "USE", 
+                                               "REQUIRE", "IMPORT", "EXPRESS", 
+                                               "AS", "LINE_COMMENT", "ASTERISK", 
+                                               "PROPERTY", "FROM", "NUMBER", 
+                                               "IDENT", "PATH", "MODULE", 
+                                               "DONT_CARE_ARGS", "ANY" ];
+
+RouterGrammarLexer.prototype.ruleNames = [ "WHITESPACE", "NEWLINE", "END_STATEMENT", 
+                                           "SEMICOLON", "COMMA", "CONST", 
+                                           "LET", "VAR", "EQUAL", "DOT", 
+                                           "USE", "REQUIRE", "IMPORT", "EXPRESS", 
+                                           "AS", "LINE_COMMENT", "ASTERISK", 
+                                           "PROPERTY", "FROM", "NUMBER", 
+                                           "IDENT", "PATH", "MODULE", "DONT_CARE_ARGS", 
+                                           "ANY" ];
+
+RouterGrammarLexer.prototype.grammarFileName = "RouterGrammar.g4";
+
+
+exports.RouterGrammarLexer = RouterGrammarLexer;
+

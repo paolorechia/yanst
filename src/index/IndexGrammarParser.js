@@ -2,11 +2,13 @@
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var IndexGrammarListener = require('./IndexGrammarListener').IndexGrammarListener;
+var IndexGrammarVisitor = require('./IndexGrammarVisitor').IndexGrammarVisitor;
+
 var grammarFileName = "IndexGrammar.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u001a9\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0003\u001b9\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
     "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0003",
     "\u0002\u0006\u0002\u0010\n\u0002\r\u0002\u000e\u0002\u0011\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\u0018\n\u0003\u0003",
@@ -56,7 +58,7 @@ var symbolicNames = [ null, null, null, "WHITESPACE", "NEWLINE", "END_STATEMENT"
                       "SEMICOLON", "COMMA", "CONST", "LET", "VAR", "EQUAL", 
                       "DOT", "USE", "REQUIRE", "IMPORT", "EXPRESS", "LINE_COMMENT", 
                       "PROPERTY", "FROM", "NUMBER", "IDENT", "PATH", "MODULE", 
-                      "DONT_CARE_ARGS" ];
+                      "DONT_CARE_ARGS", "ANY" ];
 
 var ruleNames =  [ "indexfile", "myline", "express", "require", "useroute", 
                    "import_statement" ];
@@ -104,6 +106,7 @@ IndexGrammarParser.IDENT = 21;
 IndexGrammarParser.PATH = 22;
 IndexGrammarParser.MODULE = 23;
 IndexGrammarParser.DONT_CARE_ARGS = 24;
+IndexGrammarParser.ANY = 25;
 
 IndexGrammarParser.RULE_indexfile = 0;
 IndexGrammarParser.RULE_myline = 1;
@@ -150,6 +153,14 @@ IndexfileContext.prototype.exitRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
         listener.exitIndexfile(this);
 	}
+};
+
+IndexfileContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitIndexfile(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -231,6 +242,14 @@ MylineContext.prototype.exitRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
         listener.exitMyline(this);
 	}
+};
+
+MylineContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitMyline(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -338,6 +357,14 @@ ExpressContext.prototype.exitRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
         listener.exitExpress(this);
 	}
+};
+
+ExpressContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitExpress(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -452,6 +479,14 @@ RequireContext.prototype.exitRule = function(listener) {
 	}
 };
 
+RequireContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitRequire(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -564,6 +599,14 @@ UserouteContext.prototype.exitRule = function(listener) {
 	}
 };
 
+UserouteContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitUseroute(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -642,6 +685,14 @@ Import_statementContext.prototype.exitRule = function(listener) {
     if(listener instanceof IndexGrammarListener ) {
         listener.exitImport_statement(this);
 	}
+};
+
+Import_statementContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof IndexGrammarVisitor ) {
+        return visitor.visitImport_statement(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 

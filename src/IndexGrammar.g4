@@ -60,6 +60,8 @@ EXPRESS : 'express' ;
 
 LINE_COMMENT: '//' ~[\r\n]* -> skip ;
 
+// STAR: '*';
+
 PROPERTY: IDENT ':' -> skip ;
 
 FROM: 'from' ;
@@ -73,5 +75,7 @@ PATH : ('\''|'"') '.'* ('/' IDENT)+ '/'* ('\''|'"') ;
 MODULE: ('\''|'"') IDENT ('\''|'"') ;
 
 DONT_CARE_ARGS : '(' IDENT ')' ;
+
+ANY: . ;
 
 // ANYTHING : (CONST|LET|VAR|WHITESPACE|EQUAL|DOT|IMPORT|IDENT|NUMBER|PATH)+ ;

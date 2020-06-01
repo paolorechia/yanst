@@ -20,6 +20,15 @@ IndexGrammarListener.prototype.exitIndexfile = function(ctx) {
 };
 
 
+// Enter a parse tree produced by IndexGrammarParser#line.
+IndexGrammarListener.prototype.enterLine = function(ctx) {
+};
+
+// Exit a parse tree produced by IndexGrammarParser#line.
+IndexGrammarListener.prototype.exitLine = function(ctx) {
+};
+
+
 // Enter a parse tree produced by IndexGrammarParser#express.
 IndexGrammarListener.prototype.enterExpress = function(ctx) {
 };
@@ -44,6 +53,15 @@ IndexGrammarListener.prototype.enterUseroute = function(ctx) {
 
 // Exit a parse tree produced by IndexGrammarParser#useroute.
 IndexGrammarListener.prototype.exitUseroute = function(ctx) {
+};
+
+
+// Enter a parse tree produced by IndexGrammarParser#import_statement.
+IndexGrammarListener.prototype.enterImport_statement = function(ctx) {
+};
+
+// Exit a parse tree produced by IndexGrammarParser#import_statement.
+IndexGrammarListener.prototype.exitImport_statement = function(ctx) {
 };
 
 

@@ -36,13 +36,14 @@ IndexListener.prototype.enterRequire = function (ctx) {
 };
 
 IndexListener.prototype.enterUseroute = function (ctx) {
-  console.log("Entered require");
-  const ident = ctx.IDENT()[1].getText();
-  console.log(ident);
-  const path = ctx.PATH().getText();
-  console.log(path);
-  symbols["requires"][ident] = {
-    urlpath: path.replace(/\"/g, '').replace(/'/g, ''),
+  console.log("Entered userroute");
+  if (ctx.IDENT().length > 1) {
+    const ident = ctx.IDENT()[1].getText();
+    console.log(ident);
+    const path = ctx.PATH().getText();
+    console.log(path);
+    if (symbols["requires"][ident])
+      symbols["requires"][ident]['urlpath'] = path.replace(/\"/g, '').replace(/'/g, '')
   }
 }
 

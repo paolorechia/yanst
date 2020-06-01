@@ -20,12 +20,12 @@ RouterGrammarListener.prototype.exitRouterfile = function(ctx) {
 };
 
 
-// Enter a parse tree produced by RouterGrammarParser#myline.
-RouterGrammarListener.prototype.enterMyline = function(ctx) {
+// Enter a parse tree produced by RouterGrammarParser#routerline.
+RouterGrammarListener.prototype.enterRouterline = function(ctx) {
 };
 
-// Exit a parse tree produced by RouterGrammarParser#myline.
-RouterGrammarListener.prototype.exitMyline = function(ctx) {
+// Exit a parse tree produced by RouterGrammarParser#routerline.
+RouterGrammarListener.prototype.exitRouterline = function(ctx) {
 };
 
 
@@ -35,6 +35,15 @@ RouterGrammarListener.prototype.enterImport_ = function(ctx) {
 
 // Exit a parse tree produced by RouterGrammarParser#import_.
 RouterGrammarListener.prototype.exitImport_ = function(ctx) {
+};
+
+
+// Enter a parse tree produced by RouterGrammarParser#instance.
+RouterGrammarListener.prototype.enterInstance = function(ctx) {
+};
+
+// Exit a parse tree produced by RouterGrammarParser#instance.
+RouterGrammarListener.prototype.exitInstance = function(ctx) {
 };
 
 

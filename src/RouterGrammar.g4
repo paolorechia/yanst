@@ -9,11 +9,13 @@ this.router = express.Router();
 this.router.get("/", (req, res, next) => {
 */
 
-routerfile: myline+ ;
+routerfile: routerline+ ;
 
-myline: (import_) ;
+routerline: (import_|instance) ;
 
 import_ : IMPORT ASTERISK AS (IDENT|EXPRESS) FROM MODULE END_STATEMENT ;
+
+instance: (IDENT| THIS DOT IDENT) EQUAL (IDENT|EXPRESS) DOT 'Router' LPAREN RPAREN END_STATEMENT ;
 // ignore: ()* END_STATEMENT ;
 
 
@@ -54,11 +56,17 @@ EXPRESS : 'express' ;
 
 AS: 'as' ;
 
+THIS: 'this' ;
+
 LINE_COMMENT: '//' ~[\r\n]* -> skip ;
 
 ASTERISK: '*';
 
 PROPERTY: IDENT ':' -> skip ;
+
+LPAREN: '(' ;
+
+RPAREN: ')' ;
 
 FROM: 'from' ;
 

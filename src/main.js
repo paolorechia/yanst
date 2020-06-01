@@ -31,17 +31,18 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
   const indexVisitor = new IndexVisitor();
   const symbols = indexVisitor.visit(tree);
   console.log(symbols);
-
   Object.keys(symbols['requires']).forEach(
     (key) => {
+      // console.log(key);
       filepath = symbols['requires'][key]['filepath'] + ".ts";
-      console.log(filepath);
+      console.log("Parsing file", filepath);
       fs.readFile(filepath, 'utf8', (err, data) => {
         if (err) {
           console.error(err)
           return 
         }
-        var input = 'import * as express from "express";\n';
+        // var input = 'import * as express from "express";\n';
+        var input = "this.router = express.Router();\n";
         const chars = new antlr4.InputStream(input);
         const lexer = new RouterGrammarLexer.RouterGrammarLexer(chars);
         const tokens = new antlr4.CommonTokenStream(lexer);

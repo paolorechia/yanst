@@ -12,26 +12,48 @@ RouterVisitor = function () {
 
 let expressVariable;
 
+let routerVariable;
+
 // inherit default visitor
 RouterVisitor.prototype = Object.create(RouterGrammarVisitor.prototype);
 RouterVisitor.prototype.constructor = RouterVisitor;
 
 // override default visitor behavior
 RouterVisitor.prototype.visitImport_ = function (ctx) {
-  console.log("Visited import ");
-  if (ctx.IDENT) {
+  console.log("Visited router import ");
+  if (ctx.IDENT && ctx.IDENT()) {
     expressVariable = ctx.IDENT().getText();  
   }
-  if (ctx.EXPRESS) {
+  if (ctx.EXPRESS && ctx.EXPRESS()) {
     expressVariable = ctx.EXPRESS().getText();  
   }
   console.log(expressVariable);
+  return null;
 };
 
-IndexVisitor.prototype.visitRouterfile = function (ctx) {
+RouterVisitor.prototype.visitInstance = function (ctx) {
+  console.log("Visit instance");
+  const identifiers = ctx.IDENT();
+  let variableName = '';
+  if (identifiers) {
+    if (identifiers.length) {
+      variableName = identifiers[0].getText();
+    } else {
+      variableName = identifiers.getText();
+    }
+  }
+  if (ctx.THIS && ctx.THIS()) {
+    variableName = 'this.' + variableName;
+  }
+  console.log(variableName);
+  return null;
+};
+
+RouterVisitor.prototype.visitRouterfile = function (ctx) {
   console.log("Visit router file");
   this.visitChildren(ctx);
   return null;
 };
+
 
 exports.RouterVisitor = RouterVisitor;

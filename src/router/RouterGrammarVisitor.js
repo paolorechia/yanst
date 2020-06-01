@@ -18,14 +18,20 @@ RouterGrammarVisitor.prototype.visitRouterfile = function(ctx) {
 };
 
 
-// Visit a parse tree produced by RouterGrammarParser#myline.
-RouterGrammarVisitor.prototype.visitMyline = function(ctx) {
+// Visit a parse tree produced by RouterGrammarParser#routerline.
+RouterGrammarVisitor.prototype.visitRouterline = function(ctx) {
   return this.visitChildren(ctx);
 };
 
 
 // Visit a parse tree produced by RouterGrammarParser#import_.
 RouterGrammarVisitor.prototype.visitImport_ = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by RouterGrammarParser#instance.
+RouterGrammarVisitor.prototype.visitInstance = function(ctx) {
   return this.visitChildren(ctx);
 };
 

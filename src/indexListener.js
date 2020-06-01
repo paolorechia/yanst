@@ -22,7 +22,6 @@ IndexListener.prototype.constructor = IndexListener;
 
 // override default listener behavior
 IndexListener.prototype.enterMyline= function (ctx) {
-  console.log("Entered Line ");
   if (ctx.MYLINE) {
     console.log(ctx.MYLINE().ctx.getText());
   }
@@ -34,8 +33,8 @@ IndexListener.prototype.enterExpress = function (ctx) {
 };
 
 IndexListener.prototype.enterRequire = function (ctx) {
-  console.log("Entered require");
-  if (ctx.IDENT && ctx.PATH) {
+  if (ctx.IDENT && ctx.PATH && ctx.IDENT() && ctx.PATH()) {
+    console.log("Entered valid require");
     const ident = ctx.IDENT().getText();
     const path = ctx.PATH().getText();
     symbols["requires"][ident] = {
@@ -45,8 +44,8 @@ IndexListener.prototype.enterRequire = function (ctx) {
 };
 
 IndexListener.prototype.enterUseroute = function (ctx) {
-  console.log("Entered userroute");
   if (ctx.PATH && ctx.PATH() && ctx.IDENT().length > 1) {
+    console.log("Entered valid userroute");
     const ident = ctx.IDENT()[1].getText();
     console.log(ident);
     const path = ctx.PATH().getText();

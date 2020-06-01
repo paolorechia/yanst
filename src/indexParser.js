@@ -13,24 +13,7 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
     console.error(err)
     return
   }
-  let input = ''
-  // let input = data;
-
-  /*
-  input += 'import createError, { HttpError } from "http-errors";\n';
-
-  input += 'import express, { Request, Response, NextFunction } from "express";\n';
-  input += 'import path from "path";\n';
-  input += "import cookieParser from 'cookie-parser';\n";
-  */
-
-  input += 'const app = express();\n'
-  input += "const cardsRouter = require('./routes/cards')(db);\n";
-  input += "const userRouter = require('./routes/users')(db);\n";
-  input += "app.use('/cards', cardsRouter);\n";
-  input += "app.use('/users', userRouter);\n";
-
-  console.log(input);
+  let input = data;
 
   const chars = new antlr4.InputStream(input);
   const lexer = new IndexGrammarLexer.IndexGrammarLexer(chars);

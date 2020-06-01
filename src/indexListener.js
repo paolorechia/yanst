@@ -21,6 +21,13 @@ IndexListener.prototype = Object.create(IndexGrammarListener.prototype);
 IndexListener.prototype.constructor = IndexListener;
 
 // override default listener behavior
+IndexListener.prototype.enterMyline= function (ctx) {
+  console.log("Entered Line ");
+  if (ctx.MYLINE) {
+    console.log(ctx.MYLINE().ctx.getText());
+  }
+};
+
 IndexListener.prototype.enterExpress = function (ctx) {
   console.log("Entered express");
   symbols["express_app"] = ctx.IDENT().getText();
@@ -28,16 +35,18 @@ IndexListener.prototype.enterExpress = function (ctx) {
 
 IndexListener.prototype.enterRequire = function (ctx) {
   console.log("Entered require");
-  const ident = ctx.IDENT().getText();
-  const path = ctx.PATH().getText();
-  symbols["requires"][ident] = {
-    filepath: path.replace(/\"/g, '').replace(/'/g, ''),
+  if (ctx.IDENT && ctx.PATH) {
+    const ident = ctx.IDENT().getText();
+    const path = ctx.PATH().getText();
+    symbols["requires"][ident] = {
+      filepath: path.replace(/\"/g, '').replace(/'/g, ''),
+    }
   }
 };
 
 IndexListener.prototype.enterUseroute = function (ctx) {
   console.log("Entered userroute");
-  if (ctx.IDENT().length > 1) {
+  if (ctx.PATH && ctx.PATH() && ctx.IDENT().length > 1) {
     const ident = ctx.IDENT()[1].getText();
     console.log(ident);
     const path = ctx.PATH().getText();

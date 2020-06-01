@@ -13,15 +13,16 @@ fs.readFile('./example_index.ts', 'utf8' , (err, data) => {
     console.error(err)
     return
   }
-  let input = data;
+  let input = ''
+  // let input = data;
 
   /*
   input += 'import createError, { HttpError } from "http-errors";\n';
 
   input += 'import express, { Request, Response, NextFunction } from "express";\n';
-  */
   input += 'import path from "path";\n';
   input += "import cookieParser from 'cookie-parser';\n";
+  */
 
   input += 'const app = express();\n'
   input += "const cardsRouter = require('./routes/cards')(db);\n";

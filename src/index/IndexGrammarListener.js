@@ -20,12 +20,12 @@ IndexGrammarListener.prototype.exitIndexfile = function(ctx) {
 };
 
 
-// Enter a parse tree produced by IndexGrammarParser#line.
-IndexGrammarListener.prototype.enterLine = function(ctx) {
+// Enter a parse tree produced by IndexGrammarParser#myline.
+IndexGrammarListener.prototype.enterMyline = function(ctx) {
 };
 
-// Exit a parse tree produced by IndexGrammarParser#line.
-IndexGrammarListener.prototype.exitLine = function(ctx) {
+// Exit a parse tree produced by IndexGrammarParser#myline.
+IndexGrammarListener.prototype.exitMyline = function(ctx) {
 };
 
 

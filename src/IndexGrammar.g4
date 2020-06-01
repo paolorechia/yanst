@@ -8,17 +8,17 @@ grammar IndexGrammar;
 
 // indexfile : require;
 
-indexfile : line+ ;
+indexfile : myline+ ;
 
-line: (express|require|useroute|import_statement) ;
+myline: (express|require|useroute|import_statement) ;
 
-express: (CONST|VAR|LET) WHITESPACE+ IDENT WHITESPACE* EQUAL WHITESPACE* EXPRESS WHITESPACE* '(' WHITESPACE* ')' END_STATEMENT ;
+express: (CONST|VAR|LET) IDENT EQUAL EXPRESS '(' ')' END_STATEMENT ;
 
-require: (CONST|VAR|LET) WHITESPACE+ IDENT WHITESPACE* EQUAL WHITESPACE REQUIRE WHITESPACE* '(' PATH ')' WHITESPACE* DONT_CARE_ARGS END_STATEMENT ;
+require: (CONST|VAR|LET) IDENT EQUAL REQUIRE '(' PATH ')' DONT_CARE_ARGS END_STATEMENT ;
 
-useroute: IDENT DOT USE '(' PATH WHITESPACE* COMMA WHITESPACE* IDENT WHITESPACE* ')' END_STATEMENT ;
+useroute: IDENT DOT USE '(' PATH COMMA IDENT ')' END_STATEMENT ;
 
-import_statement: IMPORT WHITESPACE* ('{'* WHITESPACE* IDENT WHITESPACE* '}'* WHITESPACE* COMMA* WHITESPACE*)* WHITESPACE* FROM WHITESPACE* MODULE END_STATEMENT ;
+import_statement: IMPORT END_STATEMENT;
 
 // ignore: ()* END_STATEMENT ;
 
@@ -30,9 +30,9 @@ import_statement: IMPORT WHITESPACE* ('{'* WHITESPACE* IDENT WHITESPACE* '}'* WH
   Lexer Rules
 */
 
-WHITESPACE : (' ' | '\t') ;
+WHITESPACE : (' ' | '\t') -> skip;
 
-NEWLINE : ('\n' | '\r') ;
+NEWLINE : ('\n' | '\r') -> skip;
 
 END_STATEMENT : WHITESPACE* (NEWLINE | SEMICOLON WHITESPACE* NEWLINE) ;
 
@@ -58,11 +58,15 @@ IMPORT : 'import' ;
 
 EXPRESS : 'express' ;
 
+LINE_COMMENT: '//' ~[\r\n]* -> skip ;
+
+PROPERTY: IDENT ':' -> skip ;
+
 FROM: 'from' ;
 
 NUMBER : [0-9]+ ;
 
-IDENT : [a-zA-Z]+[a-zA-Z0-9\-]* ;
+IDENT : [_a-zA-Z]+[_a-zA-Z0-9\-]* ;
 
 PATH : ('\''|'"') '.'* ('/' IDENT)+ '/'* ('\''|'"') ;
 

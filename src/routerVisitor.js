@@ -12,6 +12,7 @@ RouterVisitor = function () {
 
 let expressVariable;
 let instanceVariable;
+let endpoints = {};
 
 function isString(str) {
  return typeof str == 'string' || str instanceof String;
@@ -36,7 +37,7 @@ RouterVisitor.prototype.visitImport_ = function (ctx) {
 
 RouterVisitor.prototype.visitInstance = function (ctx) {
   const identifiers = ctx.IDENT();
-  if (ctx.ROUTER && ctx.ROUTER()) {
+  if (ctx.ROUTER && ctx.ROUTER() && !ctx.ARROW) {
     console.log("Visit router instance");
     let variableName = '';
     if (identifiers) { if (identifiers.length) {
@@ -63,6 +64,11 @@ RouterVisitor.prototype.visitRoute = function (ctx) {
     )
     const urlpath = ctx.URLPATH().getText();
     console.log(method[0], urlpath);
+    if (endpoints[urlpath]) {
+      endpoints[urlpath].push(method[0])
+    } else {
+      endpoints[urlpath] = [method[0]];
+    }
   }
   return null;
 };
@@ -90,8 +96,8 @@ RouterVisitor.prototype.visitHttpmethod = function (ctx) {
 
 RouterVisitor.prototype.visitRouterfile = function (ctx) {
   console.log("Visit router file");
-  routes = this.visitChildren(ctx);
-  return routes;
+  this.visitChildren(ctx);
+  return endpoints;
 };
 
 

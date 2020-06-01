@@ -42,6 +42,12 @@ RouterGrammarVisitor.prototype.visitInstance = function(ctx) {
 };
 
 
+// Visit a parse tree produced by RouterGrammarParser#function.
+RouterGrammarVisitor.prototype.visitFunction = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by RouterGrammarParser#route.
 RouterGrammarVisitor.prototype.visitRoute = function(ctx) {
   return this.visitChildren(ctx);

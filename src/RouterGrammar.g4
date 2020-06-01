@@ -11,13 +11,15 @@ this.router.get("/", (req, res, next) => {
 
 routerfile: routerline+ ;
 
-routerline: (import_|ignored_import|instance|route) ;
+routerline: (import_|ignored_import|instance|route|function) ;
 
 import_ : IMPORT ASTERISK AS (IDENT|EXPRESS) FROM MODULE END_STATEMENT ;
 
 ignored_import : IMPORT LBRACKET END_STATEMENT;
 
 instance: (IDENT| THIS DOT IDENT) EQUAL (IDENT|EXPRESS) DOT ROUTER LPAREN RPAREN END_STATEMENT ;
+
+function: IDENT EQUAL LPAREN RPAREN ':' (IDENT|EXPRESS|DOT)+ ARROW LBRACKET NEWLINE ;
 
 route: (IDENT | THIS DOT IDENT) DOT httpmethod LPAREN QUOTE URLPATH QUOTE COMMA LPAREN args RPAREN ARROW LBRACKET ;
 

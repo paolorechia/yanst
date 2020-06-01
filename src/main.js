@@ -14,6 +14,8 @@ const RouterGrammarVisitor = require("./router/RouterGrammarVisitor");
 
 const RouterVisitor = require("./routerVisitor").RouterVisitor;
 
+
+let symbols;
 fs.readFile("./example_index.ts", "utf8", (err, data) => {
   if (err) {
     console.error(err);
@@ -25,11 +27,9 @@ fs.readFile("./example_index.ts", "utf8", (err, data) => {
   const lexer = new IndexGrammarLexer.IndexGrammarLexer(chars);
   const tokens = new antlr4.CommonTokenStream(lexer);
   const parser = new IndexGrammarParser.IndexGrammarParser(tokens);
-  // parser.buildParseTrees = true;
-
   const tree = parser.indexfile();
   const indexVisitor = new IndexVisitor();
-  const symbols = indexVisitor.visit(tree);
+  symbols = indexVisitor.visit(tree);
   console.log(symbols);
   Object.keys(symbols["requires"]).forEach((key) => {
     // console.log(key);
@@ -41,21 +41,18 @@ fs.readFile("./example_index.ts", "utf8", (err, data) => {
         return;
       }
       var input = data;
-      // var input = 'import * as express from "express";\n';
-      // var input = "this.router = express.Router();\n";
-      // var input = 'this.router.get("/", (req, res, next) => {'
-      // var input = 'this.router.get("/test", (req, res, next) => {';
       const chars = new antlr4.InputStream(input);
       const lexer = new RouterGrammarLexer.RouterGrammarLexer(chars);
       const tokens = new antlr4.CommonTokenStream(lexer);
       const parser = new RouterGrammarParser.RouterGrammarParser(tokens);
-      // parser.buildParseTrees = true;
 
       const tree = parser.routerfile();
       const routerVisitor = new RouterVisitor();
-      const routes = routerVisitor.visit(tree);
+      const endpoints = routerVisitor.visit(tree);
+      symbols["requires"][key]['endpoints'] = endpoints;
+      console.log("Endpoints: ", endpoints);
     });
   });
-
-  // antlr4.tree.ParseTreeWalker.DEFAULT.walk(indexVisitor, tree);
 });
+
+setTimeout(() => console.log(symbols), 1000);

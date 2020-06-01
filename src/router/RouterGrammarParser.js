@@ -8,54 +8,62 @@ var grammarFileName = "RouterGrammar.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003(U\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
+    "\u0003)f\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
     "\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004\b",
-    "\t\b\u0004\t\t\t\u0003\u0002\u0006\u0002\u0014\n\u0002\r\u0002\u000e",
-    "\u0002\u0015\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003",
-    "\u001c\n\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003",
-    "\u0005\u0003\u0005\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0005",
-    "\u0006.\n\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003",
-    "\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0007\u0003\u0007\u0003",
-    "\u0007\u0003\u0007\u0005\u0007<\n\u0007\u0003\u0007\u0003\u0007\u0003",
-    "\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003",
-    "\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\b\u0003",
-    "\b\u0003\t\u0003\t\u0003\t\u0007\tP\n\t\f\t\u000e\tS\u000b\t\u0003\t",
-    "\u0002\u0002\n\u0002\u0004\u0006\b\n\f\u000e\u0010\u0002\u0004\u0004",
-    "\u0002\u0010\u0010  \u0003\u0002\u0019\u001d\u0002T\u0002\u0013\u0003",
-    "\u0002\u0002\u0002\u0004\u001b\u0003\u0002\u0002\u0002\u0006\u001d\u0003",
-    "\u0002\u0002\u0002\b%\u0003\u0002\u0002\u0002\n-\u0003\u0002\u0002\u0002",
-    "\f;\u0003\u0002\u0002\u0002\u000eJ\u0003\u0002\u0002\u0002\u0010Q\u0003",
-    "\u0002\u0002\u0002\u0012\u0014\u0005\u0004\u0003\u0002\u0013\u0012\u0003",
-    "\u0002\u0002\u0002\u0014\u0015\u0003\u0002\u0002\u0002\u0015\u0013\u0003",
-    "\u0002\u0002\u0002\u0015\u0016\u0003\u0002\u0002\u0002\u0016\u0003\u0003",
-    "\u0002\u0002\u0002\u0017\u001c\u0005\u0006\u0004\u0002\u0018\u001c\u0005",
-    "\b\u0005\u0002\u0019\u001c\u0005\n\u0006\u0002\u001a\u001c\u0005\f\u0007",
-    "\u0002\u001b\u0017\u0003\u0002\u0002\u0002\u001b\u0018\u0003\u0002\u0002",
-    "\u0002\u001b\u0019\u0003\u0002\u0002\u0002\u001b\u001a\u0003\u0002\u0002",
-    "\u0002\u001c\u0005\u0003\u0002\u0002\u0002\u001d\u001e\u0007\u000f\u0002",
-    "\u0002\u001e\u001f\u0007\u0014\u0002\u0002\u001f \u0007\u0011\u0002",
-    "\u0002 !\t\u0002\u0002\u0002!\"\u0007\u0018\u0002\u0002\"#\u0007$\u0002",
-    "\u0002#$\u0007\u0005\u0002\u0002$\u0007\u0003\u0002\u0002\u0002%&\u0007",
-    "\u000f\u0002\u0002&\'\u0007&\u0002\u0002\'(\u0007\u0005\u0002\u0002",
-    "(\t\u0003\u0002\u0002\u0002).\u0007 \u0002\u0002*+\u0007\u0012\u0002",
-    "\u0002+,\u0007\f\u0002\u0002,.\u0007 \u0002\u0002-)\u0003\u0002\u0002",
-    "\u0002-*\u0003\u0002\u0002\u0002./\u0003\u0002\u0002\u0002/0\u0007\u000b",
-    "\u0002\u000201\t\u0002\u0002\u000212\u0007\f\u0002\u000223\u0007\u001e",
-    "\u0002\u000234\u0007\u0016\u0002\u000245\u0007\u0017\u0002\u000256\u0007",
-    "\u0005\u0002\u00026\u000b\u0003\u0002\u0002\u00027<\u0007 \u0002\u0002",
-    "89\u0007\u0012\u0002\u00029:\u0007\f\u0002\u0002:<\u0007 \u0002\u0002",
-    ";7\u0003\u0002\u0002\u0002;8\u0003\u0002\u0002\u0002<=\u0003\u0002\u0002",
-    "\u0002=>\u0007\f\u0002\u0002>?\u0005\u000e\b\u0002?@\u0007\u0016\u0002",
-    "\u0002@A\u0007#\u0002\u0002AB\u0007\"\u0002\u0002BC\u0007#\u0002\u0002",
-    "CD\u0007\u0007\u0002\u0002DE\u0007\u0016\u0002\u0002EF\u0005\u0010\t",
-    "\u0002FG\u0007\u0017\u0002\u0002GH\u0007%\u0002\u0002HI\u0007&\u0002",
-    "\u0002I\r\u0003\u0002\u0002\u0002JK\t\u0003\u0002\u0002K\u000f\u0003",
-    "\u0002\u0002\u0002LP\u0007 \u0002\u0002MN\u0007 \u0002\u0002NP\u0007",
-    "\u0007\u0002\u0002OL\u0003\u0002\u0002\u0002OM\u0003\u0002\u0002\u0002",
-    "PS\u0003\u0002\u0002\u0002QO\u0003\u0002\u0002\u0002QR\u0003\u0002\u0002",
-    "\u0002R\u0011\u0003\u0002\u0002\u0002SQ\u0003\u0002\u0002\u0002\b\u0015",
-    "\u001b-;OQ"].join("");
+    "\t\b\u0004\t\t\t\u0004\n\t\n\u0003\u0002\u0006\u0002\u0016\n\u0002\r",
+    "\u0002\u000e\u0002\u0017\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0005\u0003\u001f\n\u0003\u0003\u0004\u0003\u0004\u0003",
+    "\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004\u0003",
+    "\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0006\u0003\u0006\u0003",
+    "\u0006\u0003\u0006\u0005\u00061\n\u0006\u0003\u0006\u0003\u0006\u0003",
+    "\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003\u0006\u0003",
+    "\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0006",
+    "\u0007A\n\u0007\r\u0007\u000e\u0007B\u0003\u0007\u0003\u0007\u0003\u0007",
+    "\u0003\u0007\u0003\b\u0003\b\u0003\b\u0003\b\u0005\bM\n\b\u0003\b\u0003",
+    "\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003\b\u0003",
+    "\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\n\u0003\n\u0003\n\u0007\na",
+    "\n\n\f\n\u000e\nd\u000b\n\u0003\n\u0002\u0002\u000b\u0002\u0004\u0006",
+    "\b\n\f\u000e\u0010\u0012\u0002\u0005\u0004\u0002\u0011\u0011!!\u0005",
+    "\u0002\r\r\u0011\u0011!!\u0003\u0002\u001a\u001e\u0002f\u0002\u0015",
+    "\u0003\u0002\u0002\u0002\u0004\u001e\u0003\u0002\u0002\u0002\u0006 ",
+    "\u0003\u0002\u0002\u0002\b(\u0003\u0002\u0002\u0002\n0\u0003\u0002\u0002",
+    "\u0002\f:\u0003\u0002\u0002\u0002\u000eL\u0003\u0002\u0002\u0002\u0010",
+    "[\u0003\u0002\u0002\u0002\u0012b\u0003\u0002\u0002\u0002\u0014\u0016",
+    "\u0005\u0004\u0003\u0002\u0015\u0014\u0003\u0002\u0002\u0002\u0016\u0017",
+    "\u0003\u0002\u0002\u0002\u0017\u0015\u0003\u0002\u0002\u0002\u0017\u0018",
+    "\u0003\u0002\u0002\u0002\u0018\u0003\u0003\u0002\u0002\u0002\u0019\u001f",
+    "\u0005\u0006\u0004\u0002\u001a\u001f\u0005\b\u0005\u0002\u001b\u001f",
+    "\u0005\n\u0006\u0002\u001c\u001f\u0005\u000e\b\u0002\u001d\u001f\u0005",
+    "\f\u0007\u0002\u001e\u0019\u0003\u0002\u0002\u0002\u001e\u001a\u0003",
+    "\u0002\u0002\u0002\u001e\u001b\u0003\u0002\u0002\u0002\u001e\u001c\u0003",
+    "\u0002\u0002\u0002\u001e\u001d\u0003\u0002\u0002\u0002\u001f\u0005\u0003",
+    "\u0002\u0002\u0002 !\u0007\u0010\u0002\u0002!\"\u0007\u0015\u0002\u0002",
+    "\"#\u0007\u0012\u0002\u0002#$\t\u0002\u0002\u0002$%\u0007\u0019\u0002",
+    "\u0002%&\u0007%\u0002\u0002&\'\u0007\u0006\u0002\u0002\'\u0007\u0003",
+    "\u0002\u0002\u0002()\u0007\u0010\u0002\u0002)*\u0007\'\u0002\u0002*",
+    "+\u0007\u0006\u0002\u0002+\t\u0003\u0002\u0002\u0002,1\u0007!\u0002",
+    "\u0002-.\u0007\u0013\u0002\u0002./\u0007\r\u0002\u0002/1\u0007!\u0002",
+    "\u00020,\u0003\u0002\u0002\u00020-\u0003\u0002\u0002\u000212\u0003\u0002",
+    "\u0002\u000223\u0007\f\u0002\u000234\t\u0002\u0002\u000245\u0007\r\u0002",
+    "\u000256\u0007\u001f\u0002\u000267\u0007\u0017\u0002\u000278\u0007\u0018",
+    "\u0002\u000289\u0007\u0006\u0002\u00029\u000b\u0003\u0002\u0002\u0002",
+    ":;\u0007!\u0002\u0002;<\u0007\f\u0002\u0002<=\u0007\u0017\u0002\u0002",
+    "=>\u0007\u0018\u0002\u0002>@\u0007\u0003\u0002\u0002?A\t\u0003\u0002",
+    "\u0002@?\u0003\u0002\u0002\u0002AB\u0003\u0002\u0002\u0002B@\u0003\u0002",
+    "\u0002\u0002BC\u0003\u0002\u0002\u0002CD\u0003\u0002\u0002\u0002DE\u0007",
+    "&\u0002\u0002EF\u0007\'\u0002\u0002FG\u0007\u0005\u0002\u0002G\r\u0003",
+    "\u0002\u0002\u0002HM\u0007!\u0002\u0002IJ\u0007\u0013\u0002\u0002JK",
+    "\u0007\r\u0002\u0002KM\u0007!\u0002\u0002LH\u0003\u0002\u0002\u0002",
+    "LI\u0003\u0002\u0002\u0002MN\u0003\u0002\u0002\u0002NO\u0007\r\u0002",
+    "\u0002OP\u0005\u0010\t\u0002PQ\u0007\u0017\u0002\u0002QR\u0007$\u0002",
+    "\u0002RS\u0007#\u0002\u0002ST\u0007$\u0002\u0002TU\u0007\b\u0002\u0002",
+    "UV\u0007\u0017\u0002\u0002VW\u0005\u0012\n\u0002WX\u0007\u0018\u0002",
+    "\u0002XY\u0007&\u0002\u0002YZ\u0007\'\u0002\u0002Z\u000f\u0003\u0002",
+    "\u0002\u0002[\\\t\u0004\u0002\u0002\\\u0011\u0003\u0002\u0002\u0002",
+    "]a\u0007!\u0002\u0002^_\u0007!\u0002\u0002_a\u0007\b\u0002\u0002`]\u0003",
+    "\u0002\u0002\u0002`^\u0003\u0002\u0002\u0002ad\u0003\u0002\u0002\u0002",
+    "b`\u0003\u0002\u0002\u0002bc\u0003\u0002\u0002\u0002c\u0013\u0003\u0002",
+    "\u0002\u0002db\u0003\u0002\u0002\u0002\t\u0017\u001e0BL`b"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -64,23 +72,24 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, null, null, null, "';'", "','", "'const'", "'let'", 
-                     "'var'", "'='", "'.'", "'use'", "'require'", "'import'", 
-                     "'express'", "'as'", "'this'", null, "'*'", null, "'('", 
-                     "')'", "'from'", "'get'", "'post'", "'put'", "'patch'", 
-                     "'delete'", "'Router'", null, null, null, null, null, 
-                     null, "'=>'", "'{'", "'}'" ];
+var literalNames = [ null, "':'", null, null, null, "';'", "','", "'const'", 
+                     "'let'", "'var'", "'='", "'.'", "'use'", "'require'", 
+                     "'import'", "'express'", "'as'", "'this'", null, "'*'", 
+                     null, "'('", "')'", "'from'", "'get'", "'post'", "'put'", 
+                     "'patch'", "'delete'", "'Router'", null, null, null, 
+                     null, null, null, "'=>'", "'{'", "'}'" ];
 
-var symbolicNames = [ null, "WHITESPACE", "NEWLINE", "END_STATEMENT", "SEMICOLON", 
-                      "COMMA", "CONST", "LET", "VAR", "EQUAL", "DOT", "USE", 
-                      "REQUIRE", "IMPORT", "EXPRESS", "AS", "THIS", "LINE_COMMENT", 
-                      "ASTERISK", "PROPERTY", "LPAREN", "RPAREN", "FROM", 
-                      "GET", "POST", "PUT", "PATCH", "DELETE", "ROUTER", 
-                      "NUMBER", "IDENT", "URLARG", "URLPATH", "QUOTE", "MODULE", 
-                      "ARROW", "LBRACKET", "RBRACKET", "ANY" ];
+var symbolicNames = [ null, null, "WHITESPACE", "NEWLINE", "END_STATEMENT", 
+                      "SEMICOLON", "COMMA", "CONST", "LET", "VAR", "EQUAL", 
+                      "DOT", "USE", "REQUIRE", "IMPORT", "EXPRESS", "AS", 
+                      "THIS", "LINE_COMMENT", "ASTERISK", "PROPERTY", "LPAREN", 
+                      "RPAREN", "FROM", "GET", "POST", "PUT", "PATCH", "DELETE", 
+                      "ROUTER", "NUMBER", "IDENT", "URLARG", "URLPATH", 
+                      "QUOTE", "MODULE", "ARROW", "LBRACKET", "RBRACKET", 
+                      "ANY" ];
 
 var ruleNames =  [ "routerfile", "routerline", "import_", "ignored_import", 
-                   "instance", "route", "httpmethod", "args" ];
+                   "instance", "function", "route", "httpmethod", "args" ];
 
 function RouterGrammarParser (input) {
 	antlr4.Parser.call(this, input);
@@ -101,53 +110,55 @@ Object.defineProperty(RouterGrammarParser.prototype, "atn", {
 });
 
 RouterGrammarParser.EOF = antlr4.Token.EOF;
-RouterGrammarParser.WHITESPACE = 1;
-RouterGrammarParser.NEWLINE = 2;
-RouterGrammarParser.END_STATEMENT = 3;
-RouterGrammarParser.SEMICOLON = 4;
-RouterGrammarParser.COMMA = 5;
-RouterGrammarParser.CONST = 6;
-RouterGrammarParser.LET = 7;
-RouterGrammarParser.VAR = 8;
-RouterGrammarParser.EQUAL = 9;
-RouterGrammarParser.DOT = 10;
-RouterGrammarParser.USE = 11;
-RouterGrammarParser.REQUIRE = 12;
-RouterGrammarParser.IMPORT = 13;
-RouterGrammarParser.EXPRESS = 14;
-RouterGrammarParser.AS = 15;
-RouterGrammarParser.THIS = 16;
-RouterGrammarParser.LINE_COMMENT = 17;
-RouterGrammarParser.ASTERISK = 18;
-RouterGrammarParser.PROPERTY = 19;
-RouterGrammarParser.LPAREN = 20;
-RouterGrammarParser.RPAREN = 21;
-RouterGrammarParser.FROM = 22;
-RouterGrammarParser.GET = 23;
-RouterGrammarParser.POST = 24;
-RouterGrammarParser.PUT = 25;
-RouterGrammarParser.PATCH = 26;
-RouterGrammarParser.DELETE = 27;
-RouterGrammarParser.ROUTER = 28;
-RouterGrammarParser.NUMBER = 29;
-RouterGrammarParser.IDENT = 30;
-RouterGrammarParser.URLARG = 31;
-RouterGrammarParser.URLPATH = 32;
-RouterGrammarParser.QUOTE = 33;
-RouterGrammarParser.MODULE = 34;
-RouterGrammarParser.ARROW = 35;
-RouterGrammarParser.LBRACKET = 36;
-RouterGrammarParser.RBRACKET = 37;
-RouterGrammarParser.ANY = 38;
+RouterGrammarParser.T__0 = 1;
+RouterGrammarParser.WHITESPACE = 2;
+RouterGrammarParser.NEWLINE = 3;
+RouterGrammarParser.END_STATEMENT = 4;
+RouterGrammarParser.SEMICOLON = 5;
+RouterGrammarParser.COMMA = 6;
+RouterGrammarParser.CONST = 7;
+RouterGrammarParser.LET = 8;
+RouterGrammarParser.VAR = 9;
+RouterGrammarParser.EQUAL = 10;
+RouterGrammarParser.DOT = 11;
+RouterGrammarParser.USE = 12;
+RouterGrammarParser.REQUIRE = 13;
+RouterGrammarParser.IMPORT = 14;
+RouterGrammarParser.EXPRESS = 15;
+RouterGrammarParser.AS = 16;
+RouterGrammarParser.THIS = 17;
+RouterGrammarParser.LINE_COMMENT = 18;
+RouterGrammarParser.ASTERISK = 19;
+RouterGrammarParser.PROPERTY = 20;
+RouterGrammarParser.LPAREN = 21;
+RouterGrammarParser.RPAREN = 22;
+RouterGrammarParser.FROM = 23;
+RouterGrammarParser.GET = 24;
+RouterGrammarParser.POST = 25;
+RouterGrammarParser.PUT = 26;
+RouterGrammarParser.PATCH = 27;
+RouterGrammarParser.DELETE = 28;
+RouterGrammarParser.ROUTER = 29;
+RouterGrammarParser.NUMBER = 30;
+RouterGrammarParser.IDENT = 31;
+RouterGrammarParser.URLARG = 32;
+RouterGrammarParser.URLPATH = 33;
+RouterGrammarParser.QUOTE = 34;
+RouterGrammarParser.MODULE = 35;
+RouterGrammarParser.ARROW = 36;
+RouterGrammarParser.LBRACKET = 37;
+RouterGrammarParser.RBRACKET = 38;
+RouterGrammarParser.ANY = 39;
 
 RouterGrammarParser.RULE_routerfile = 0;
 RouterGrammarParser.RULE_routerline = 1;
 RouterGrammarParser.RULE_import_ = 2;
 RouterGrammarParser.RULE_ignored_import = 3;
 RouterGrammarParser.RULE_instance = 4;
-RouterGrammarParser.RULE_route = 5;
-RouterGrammarParser.RULE_httpmethod = 6;
-RouterGrammarParser.RULE_args = 7;
+RouterGrammarParser.RULE_function = 5;
+RouterGrammarParser.RULE_route = 6;
+RouterGrammarParser.RULE_httpmethod = 7;
+RouterGrammarParser.RULE_args = 8;
 
 
 function RouterfileContext(parser, parent, invokingState) {
@@ -209,13 +220,13 @@ RouterGrammarParser.prototype.routerfile = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 17; 
+        this.state = 19; 
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         do {
-            this.state = 16;
+            this.state = 18;
             this.routerline();
-            this.state = 19; 
+            this.state = 21; 
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << RouterGrammarParser.IMPORT) | (1 << RouterGrammarParser.THIS) | (1 << RouterGrammarParser.IDENT))) !== 0));
@@ -266,6 +277,10 @@ RouterlineContext.prototype.route = function() {
     return this.getTypedRuleContext(RouteContext,0);
 };
 
+RouterlineContext.prototype.function = function() {
+    return this.getTypedRuleContext(FunctionContext,0);
+};
+
 RouterlineContext.prototype.enterRule = function(listener) {
     if(listener instanceof RouterGrammarListener ) {
         listener.enterRouterline(this);
@@ -297,28 +312,33 @@ RouterGrammarParser.prototype.routerline = function() {
     this.enterRule(localctx, 2, RouterGrammarParser.RULE_routerline);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 25;
+        this.state = 28;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
         switch(la_) {
         case 1:
-            this.state = 21;
+            this.state = 23;
             this.import_();
             break;
 
         case 2:
-            this.state = 22;
+            this.state = 24;
             this.ignored_import();
             break;
 
         case 3:
-            this.state = 23;
+            this.state = 25;
             this.instance();
             break;
 
         case 4:
-            this.state = 24;
+            this.state = 26;
             this.route();
+            break;
+
+        case 5:
+            this.state = 27;
+            this.function();
             break;
 
         }
@@ -417,13 +437,13 @@ RouterGrammarParser.prototype.import_ = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 27;
-        this.match(RouterGrammarParser.IMPORT);
-        this.state = 28;
-        this.match(RouterGrammarParser.ASTERISK);
-        this.state = 29;
-        this.match(RouterGrammarParser.AS);
         this.state = 30;
+        this.match(RouterGrammarParser.IMPORT);
+        this.state = 31;
+        this.match(RouterGrammarParser.ASTERISK);
+        this.state = 32;
+        this.match(RouterGrammarParser.AS);
+        this.state = 33;
         _la = this._input.LA(1);
         if(!(_la===RouterGrammarParser.EXPRESS || _la===RouterGrammarParser.IDENT)) {
         this._errHandler.recoverInline(this);
@@ -432,11 +452,11 @@ RouterGrammarParser.prototype.import_ = function() {
         	this._errHandler.reportMatch(this);
             this.consume();
         }
-        this.state = 31;
+        this.state = 34;
         this.match(RouterGrammarParser.FROM);
-        this.state = 32;
+        this.state = 35;
         this.match(RouterGrammarParser.MODULE);
-        this.state = 33;
+        this.state = 36;
         this.match(RouterGrammarParser.END_STATEMENT);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -512,11 +532,11 @@ RouterGrammarParser.prototype.ignored_import = function() {
     this.enterRule(localctx, 6, RouterGrammarParser.RULE_ignored_import);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 35;
+        this.state = 38;
         this.match(RouterGrammarParser.IMPORT);
-        this.state = 36;
+        this.state = 39;
         this.match(RouterGrammarParser.LBRACKET);
-        this.state = 37;
+        this.state = 40;
         this.match(RouterGrammarParser.END_STATEMENT);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -633,27 +653,27 @@ RouterGrammarParser.prototype.instance = function() {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 43;
+        this.state = 46;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case RouterGrammarParser.IDENT:
-            this.state = 39;
+            this.state = 42;
             this.match(RouterGrammarParser.IDENT);
             break;
         case RouterGrammarParser.THIS:
-            this.state = 40;
+            this.state = 43;
             this.match(RouterGrammarParser.THIS);
-            this.state = 41;
+            this.state = 44;
             this.match(RouterGrammarParser.DOT);
-            this.state = 42;
+            this.state = 45;
             this.match(RouterGrammarParser.IDENT);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
         }
-        this.state = 45;
+        this.state = 48;
         this.match(RouterGrammarParser.EQUAL);
-        this.state = 46;
+        this.state = 49;
         _la = this._input.LA(1);
         if(!(_la===RouterGrammarParser.EXPRESS || _la===RouterGrammarParser.IDENT)) {
         this._errHandler.recoverInline(this);
@@ -662,16 +682,172 @@ RouterGrammarParser.prototype.instance = function() {
         	this._errHandler.reportMatch(this);
             this.consume();
         }
-        this.state = 47;
-        this.match(RouterGrammarParser.DOT);
-        this.state = 48;
-        this.match(RouterGrammarParser.ROUTER);
-        this.state = 49;
-        this.match(RouterGrammarParser.LPAREN);
         this.state = 50;
-        this.match(RouterGrammarParser.RPAREN);
+        this.match(RouterGrammarParser.DOT);
         this.state = 51;
+        this.match(RouterGrammarParser.ROUTER);
+        this.state = 52;
+        this.match(RouterGrammarParser.LPAREN);
+        this.state = 53;
+        this.match(RouterGrammarParser.RPAREN);
+        this.state = 54;
         this.match(RouterGrammarParser.END_STATEMENT);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+
+function FunctionContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = RouterGrammarParser.RULE_function;
+    return this;
+}
+
+FunctionContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+FunctionContext.prototype.constructor = FunctionContext;
+
+FunctionContext.prototype.IDENT = function(i) {
+	if(i===undefined) {
+		i = null;
+	}
+    if(i===null) {
+        return this.getTokens(RouterGrammarParser.IDENT);
+    } else {
+        return this.getToken(RouterGrammarParser.IDENT, i);
+    }
+};
+
+
+FunctionContext.prototype.EQUAL = function() {
+    return this.getToken(RouterGrammarParser.EQUAL, 0);
+};
+
+FunctionContext.prototype.LPAREN = function() {
+    return this.getToken(RouterGrammarParser.LPAREN, 0);
+};
+
+FunctionContext.prototype.RPAREN = function() {
+    return this.getToken(RouterGrammarParser.RPAREN, 0);
+};
+
+FunctionContext.prototype.ARROW = function() {
+    return this.getToken(RouterGrammarParser.ARROW, 0);
+};
+
+FunctionContext.prototype.LBRACKET = function() {
+    return this.getToken(RouterGrammarParser.LBRACKET, 0);
+};
+
+FunctionContext.prototype.NEWLINE = function() {
+    return this.getToken(RouterGrammarParser.NEWLINE, 0);
+};
+
+FunctionContext.prototype.EXPRESS = function(i) {
+	if(i===undefined) {
+		i = null;
+	}
+    if(i===null) {
+        return this.getTokens(RouterGrammarParser.EXPRESS);
+    } else {
+        return this.getToken(RouterGrammarParser.EXPRESS, i);
+    }
+};
+
+
+FunctionContext.prototype.DOT = function(i) {
+	if(i===undefined) {
+		i = null;
+	}
+    if(i===null) {
+        return this.getTokens(RouterGrammarParser.DOT);
+    } else {
+        return this.getToken(RouterGrammarParser.DOT, i);
+    }
+};
+
+
+FunctionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof RouterGrammarListener ) {
+        listener.enterFunction(this);
+	}
+};
+
+FunctionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof RouterGrammarListener ) {
+        listener.exitFunction(this);
+	}
+};
+
+FunctionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof RouterGrammarVisitor ) {
+        return visitor.visitFunction(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+RouterGrammarParser.FunctionContext = FunctionContext;
+
+RouterGrammarParser.prototype.function = function() {
+
+    var localctx = new FunctionContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 10, RouterGrammarParser.RULE_function);
+    var _la = 0; // Token type
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 56;
+        this.match(RouterGrammarParser.IDENT);
+        this.state = 57;
+        this.match(RouterGrammarParser.EQUAL);
+        this.state = 58;
+        this.match(RouterGrammarParser.LPAREN);
+        this.state = 59;
+        this.match(RouterGrammarParser.RPAREN);
+        this.state = 60;
+        this.match(RouterGrammarParser.T__0);
+        this.state = 62; 
+        this._errHandler.sync(this);
+        _la = this._input.LA(1);
+        do {
+            this.state = 61;
+            _la = this._input.LA(1);
+            if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << RouterGrammarParser.DOT) | (1 << RouterGrammarParser.EXPRESS) | (1 << RouterGrammarParser.IDENT))) !== 0))) {
+            this._errHandler.recoverInline(this);
+            }
+            else {
+            	this._errHandler.reportMatch(this);
+                this.consume();
+            }
+            this.state = 64; 
+            this._errHandler.sync(this);
+            _la = this._input.LA(1);
+        } while((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << RouterGrammarParser.DOT) | (1 << RouterGrammarParser.EXPRESS) | (1 << RouterGrammarParser.IDENT))) !== 0));
+        this.state = 66;
+        this.match(RouterGrammarParser.ARROW);
+        this.state = 67;
+        this.match(RouterGrammarParser.LBRACKET);
+        this.state = 68;
+        this.match(RouterGrammarParser.NEWLINE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -803,50 +979,50 @@ RouterGrammarParser.RouteContext = RouteContext;
 RouterGrammarParser.prototype.route = function() {
 
     var localctx = new RouteContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 10, RouterGrammarParser.RULE_route);
+    this.enterRule(localctx, 12, RouterGrammarParser.RULE_route);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 57;
+        this.state = 74;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case RouterGrammarParser.IDENT:
-            this.state = 53;
+            this.state = 70;
             this.match(RouterGrammarParser.IDENT);
             break;
         case RouterGrammarParser.THIS:
-            this.state = 54;
+            this.state = 71;
             this.match(RouterGrammarParser.THIS);
-            this.state = 55;
+            this.state = 72;
             this.match(RouterGrammarParser.DOT);
-            this.state = 56;
+            this.state = 73;
             this.match(RouterGrammarParser.IDENT);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
         }
-        this.state = 59;
+        this.state = 76;
         this.match(RouterGrammarParser.DOT);
-        this.state = 60;
+        this.state = 77;
         this.httpmethod();
-        this.state = 61;
+        this.state = 78;
         this.match(RouterGrammarParser.LPAREN);
-        this.state = 62;
+        this.state = 79;
         this.match(RouterGrammarParser.QUOTE);
-        this.state = 63;
+        this.state = 80;
         this.match(RouterGrammarParser.URLPATH);
-        this.state = 64;
+        this.state = 81;
         this.match(RouterGrammarParser.QUOTE);
-        this.state = 65;
+        this.state = 82;
         this.match(RouterGrammarParser.COMMA);
-        this.state = 66;
+        this.state = 83;
         this.match(RouterGrammarParser.LPAREN);
-        this.state = 67;
+        this.state = 84;
         this.args();
-        this.state = 68;
+        this.state = 85;
         this.match(RouterGrammarParser.RPAREN);
-        this.state = 69;
+        this.state = 86;
         this.match(RouterGrammarParser.ARROW);
-        this.state = 70;
+        this.state = 87;
         this.match(RouterGrammarParser.LBRACKET);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -927,11 +1103,11 @@ RouterGrammarParser.HttpmethodContext = HttpmethodContext;
 RouterGrammarParser.prototype.httpmethod = function() {
 
     var localctx = new HttpmethodContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 12, RouterGrammarParser.RULE_httpmethod);
+    this.enterRule(localctx, 14, RouterGrammarParser.RULE_httpmethod);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 72;
+        this.state = 89;
         _la = this._input.LA(1);
         if(!((((_la) & ~0x1f) == 0 && ((1 << _la) & ((1 << RouterGrammarParser.GET) | (1 << RouterGrammarParser.POST) | (1 << RouterGrammarParser.PUT) | (1 << RouterGrammarParser.PATCH) | (1 << RouterGrammarParser.DELETE))) !== 0))) {
         this._errHandler.recoverInline(this);
@@ -1023,32 +1199,32 @@ RouterGrammarParser.ArgsContext = ArgsContext;
 RouterGrammarParser.prototype.args = function() {
 
     var localctx = new ArgsContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 14, RouterGrammarParser.RULE_args);
+    this.enterRule(localctx, 16, RouterGrammarParser.RULE_args);
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 79;
+        this.state = 96;
         this._errHandler.sync(this);
         _la = this._input.LA(1);
         while(_la===RouterGrammarParser.IDENT) {
-            this.state = 77;
+            this.state = 94;
             this._errHandler.sync(this);
-            var la_ = this._interp.adaptivePredict(this._input,4,this._ctx);
+            var la_ = this._interp.adaptivePredict(this._input,5,this._ctx);
             switch(la_) {
             case 1:
-                this.state = 74;
+                this.state = 91;
                 this.match(RouterGrammarParser.IDENT);
                 break;
 
             case 2:
-                this.state = 75;
+                this.state = 92;
                 this.match(RouterGrammarParser.IDENT);
-                this.state = 76;
+                this.state = 93;
                 this.match(RouterGrammarParser.COMMA);
                 break;
 
             }
-            this.state = 81;
+            this.state = 98;
             this._errHandler.sync(this);
             _la = this._input.LA(1);
         }

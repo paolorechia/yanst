@@ -1,0 +1,22 @@
+{
+  "name": "yanst",
+  "version": "1.0.0",
+  "description": "Yet another node swagger tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolorechia/yanst.git"
+  },
+  "author": "Paolo Rechia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paolorechia/yanst/issues"
+  },
+  "homepage": "https://github.com/paolorechia/yanst#readme",
+  "dependencies": {
+    "antlr4": "^4.8.0"
+  }
+}

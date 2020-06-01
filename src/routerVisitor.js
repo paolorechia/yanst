@@ -11,8 +11,11 @@ RouterVisitor = function () {
 
 
 let expressVariable;
+let instanceVariable;
 
-let routerVariable;
+function isString(str) {
+ return typeof str == 'string' || str instanceof String;
+}
 
 // inherit default visitor
 RouterVisitor.prototype = Object.create(RouterGrammarVisitor.prototype);
@@ -32,51 +35,63 @@ RouterVisitor.prototype.visitImport_ = function (ctx) {
 };
 
 RouterVisitor.prototype.visitInstance = function (ctx) {
-  console.log("Visit instance");
   const identifiers = ctx.IDENT();
-  let variableName = '';
-  if (identifiers) {
-    if (identifiers.length) {
-      variableName = identifiers[0].getText();
-    } else {
-      variableName = identifiers.getText();
+  if (ctx.ROUTER && ctx.ROUTER()) {
+    console.log("Visit router instance");
+    let variableName = '';
+    if (identifiers) { if (identifiers.length) {
+        variableName = identifiers[0].getText();
+      } else {
+        variableName = identifiers.getText();
+      }
     }
+    if (ctx.THIS && ctx.THIS()) {
+      variableName = 'this.' + variableName;
+    }
+    instanceVariable = variableName;
+    console.log(instanceVariable);
   }
-  if (ctx.THIS && ctx.THIS()) {
-    variableName = 'this.' + variableName;
-  }
-  console.log(variableName);
   return null;
 };
 
 RouterVisitor.prototype.visitRoute = function (ctx) {
-  console.log("Visit route definition");
-  this.visitChildren(ctx);
-  console.log(ctx.URLPATH().getText());
+  const childrenNodes = this.visitChildren(ctx);
+  if (ctx.URLPATH && ctx.URLPATH()) {
+    // console.log("Visit valid route definition");
+    const method = childrenNodes.filter(
+      (node) => isString(node)
+    )
+    const urlpath = ctx.URLPATH().getText();
+    console.log(method[0], urlpath);
+  }
   return null;
 };
 
 RouterVisitor.prototype.visitHttpmethod = function (ctx) {
-  console.log("Visit method definition");
+  // console.log("Visit method definition");
+  let method = null;
   if (ctx.GET && ctx.GET()) {
-    console.log(ctx.GET().getText());
+    method = ctx.GET().getText();
   }
   if (ctx.POST && ctx.POST()) {
-    console.log(ctx.POST().getText());
+    method = ctx.POST().getText();
   }
   if (ctx.PUT && ctx.PUT()) {
-    console.log(ctx.PUT().getText());
+    method = ctx.PUT().getText();
+  }
+  if (ctx.PATCH && ctx.PATCH()) {
+    method = ctx.PATCH().getText();
   }
   if (ctx.DELETE && ctx.DELETE()) {
-    console.log(ctx.DELETE().getText());
+    method = ctx.DELETE().getText();
   }
-  return null;
+  return method;
 };
 
 RouterVisitor.prototype.visitRouterfile = function (ctx) {
   console.log("Visit router file");
-  this.visitChildren(ctx);
-  return null;
+  routes = this.visitChildren(ctx);
+  return routes;
 };
 
 

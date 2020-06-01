@@ -30,6 +30,12 @@ RouterGrammarVisitor.prototype.visitImport_ = function(ctx) {
 };
 
 
+// Visit a parse tree produced by RouterGrammarParser#ignored_import.
+RouterGrammarVisitor.prototype.visitIgnored_import = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by RouterGrammarParser#instance.
 RouterGrammarVisitor.prototype.visitInstance = function(ctx) {
   return this.visitChildren(ctx);

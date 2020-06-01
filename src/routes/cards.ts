@@ -11,7 +11,6 @@ class CardRouter {
     /* Cards router */
     this.router = express.Router();
   }
-
   initRouter = (): express.Router => {
     /**
      * Gets the universe of cards for a user.

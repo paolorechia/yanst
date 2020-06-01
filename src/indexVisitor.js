@@ -13,7 +13,7 @@ IndexVisitor = function () {
 
 const symbols = {
   express_app: "",
-  requires: {}
+  requires: {},
 };
 
 // inherit default listener
@@ -21,7 +21,7 @@ IndexVisitor.prototype = Object.create(IndexGrammarVisitor.prototype);
 IndexVisitor.prototype.constructor = IndexVisitor;
 
 // override default listener behavior
-IndexVisitor.prototype.enterMyline= function (ctx) {
+IndexVisitor.prototype.enterMyline = function (ctx) {
   if (ctx.MYLINE) {
     console.log(ctx.MYLINE().ctx.getText());
   }
@@ -38,8 +38,8 @@ IndexVisitor.prototype.visitRequire = function (ctx) {
     const ident = ctx.IDENT().getText();
     const path = ctx.PATH().getText();
     symbols["requires"][ident] = {
-      filepath: path.replace(/\"/g, '').replace(/'/g, ''),
-    }
+      filepath: path.replace(/\"/g, "").replace(/'/g, ""),
+    };
   }
 };
 
@@ -51,9 +51,11 @@ IndexVisitor.prototype.visitUseroute = function (ctx) {
     const path = ctx.PATH().getText();
     console.log(path);
     if (symbols["requires"][ident])
-      symbols["requires"][ident]['urlpath'] = path.replace(/\"/g, '').replace(/'/g, '')
+      symbols["requires"][ident]["urlpath"] = path
+        .replace(/\"/g, "")
+        .replace(/'/g, "");
   }
-}
+};
 
 IndexVisitor.prototype.visitIndexfile = function (ctx) {
   console.log("Visit index file");

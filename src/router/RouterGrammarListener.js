@@ -38,6 +38,15 @@ RouterGrammarListener.prototype.exitImport_ = function(ctx) {
 };
 
 
+// Enter a parse tree produced by RouterGrammarParser#ignored_import.
+RouterGrammarListener.prototype.enterIgnored_import = function(ctx) {
+};
+
+// Exit a parse tree produced by RouterGrammarParser#ignored_import.
+RouterGrammarListener.prototype.exitIgnored_import = function(ctx) {
+};
+
+
 // Enter a parse tree produced by RouterGrammarParser#instance.
 RouterGrammarListener.prototype.enterInstance = function(ctx) {
 };

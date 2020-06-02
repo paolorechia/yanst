@@ -24,8 +24,10 @@ let symbols;
 // }
 //
 // ES6 {var, let, const}
+//
+main();
 
-const promise = new Promise(function (resolve, reject) {
+function main() {
   fs.readFile("./example_index.ts", "utf8", (err, data) => {
     if (err) {
       console.error(err);
@@ -42,34 +44,39 @@ const promise = new Promise(function (resolve, reject) {
     symbols = indexVisitor.visit(tree);
     const requires = Object.keys(symbols["requires"]);
 
-    let endpoints = recursiveFileReader(0, requires.length, symbols, () =>
-      console.log(symbols)
-    );
+    let endpoints = recursiveFileReader(0, requires.length, symbols);
+    console.log(endpoints)
+    endpoints.then( t => {
+      console.log("Resolving")
+      console.log(toJSON(t))
+    });
   });
-});
+}
 
-function recursiveFileReader(index, maxIndex, symbols, callback) {
-  if (index >= maxIndex) {
-    return callback();
-  } else {
-    const requires = Object.keys(symbols["requires"]);
-    console.log("requires", requires);
-    const key = requires[index];
-    console.log("key", key);
-    const filepath = symbols["requires"][key]["filepath"] + ".ts";
-    console.log("filepath", filepath);
-    readRouterFile(filepath)
-      .then((t) => {
-        console.log(index, maxIndex, symbols);
-        index++;
-        return recursiveFileReader(index, maxIndex, symbols, callback);
-      })
-      .catch((err) => {
-        console.log(err);
-        index++;
-        return recursiveFileReader(index, maxIndex, symbols, callback);
-      });
-  }
+function recursiveFileReader(index, maxIndex, symbols) {
+  return new Promise(function(resolve) {
+    if (index >= maxIndex) {
+      return resolve(symbols);
+    } else {
+      const requires = Object.keys(symbols["requires"]);
+      const key = requires[index];
+      const filepath = symbols["requires"][key]["filepath"] + ".ts";
+      readRouterFile(filepath)
+        .then((endpoints) => {
+          index++;
+          symbols["requires"][key]["endpoints"] = endpoints;
+          recursiveFileReader(index, maxIndex, symbols)
+            .then( endpoints => {
+              resolve(recursiveFileReader(index, maxIndex, symbols));
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+          index++;
+          return resolve(recursiveFileReader(index, maxIndex, symbols));
+        });
+    }
+  })
 }
 
 function readRouterFile(filepath) {
@@ -89,13 +96,14 @@ function readRouterFile(filepath) {
 
       const tree = parser.routerfile();
       const routerVisitor = new RouterVisitor();
-      return resolve(routerVisitor.visit(tree));
+      const endpoints = routerVisitor.visit(tree);
+      console.log(endpoints);
+      return resolve(endpoints)
     });
   });
 }
 
 function toJSON(symbols) {
-  console.log("Resolving promise");
-  console.log(JSON.stringify(symbols, null, 4));
-  // setTimeout(() => console.log(JSON.stringify(symbols, null, 4)), 1000);
+  return JSON.stringify(symbols, null, 4);
 }
+

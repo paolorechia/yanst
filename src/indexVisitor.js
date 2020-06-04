@@ -4,7 +4,6 @@ const IndexGrammarParser = require("./index/IndexGrammarParser");
 const IndexGrammarVisitor = require("./index/IndexGrammarVisitor")
   .IndexGrammarVisitor;
 
-console.log("Building Visitor...");
 IndexVisitor = function () {
   console.log("Inheriting...");
   IndexGrammarVisitor.call(this); // inherit default listener

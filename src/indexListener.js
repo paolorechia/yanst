@@ -6,8 +6,7 @@ const IndexGrammarListener = require("./index/IndexGrammarListener")
 
 console.log("Building Listener...");
 IndexListener = function () {
-  console.log("Inheriting...");
-  IndexGrammarListener.call(this); // inherit default listener
+  console.log("Inheriting..."); IndexGrammarListener.call(this); // inherit default listener
   return this;
 };
 

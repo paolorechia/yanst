@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/paolorechia/yanst#readme",
   "dependencies": {
-    "antlr4": "^4.8.0"
+    "antlr4": "^4.8.0",
+    "yargs": "^13.2.4"
   },
   "devDependencies": {
     "eslint": "^7.1.0"

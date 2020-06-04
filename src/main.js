@@ -1,3 +1,13 @@
+#!/usr/bin/env node
+
+
+const yargs = require("yargs");
+
+const options = yargs
+ .usage("Usage: -f <file>")
+ .option("f", { alias: "file", describe: "Your app.js file", type: "string", demandOption: true })
+ .argv;
+
 const fs = require("fs");
 
 const antlr4 = require("antlr4/index");
@@ -16,19 +26,16 @@ const RouterVisitor = require("./routerVisitor").RouterVisitor;
 
 let symbols;
 
+const inputFile = options.file;
 
-// ES5 var
-//
-// for (var i = 0; i < LEN; i++) {
-//
-// }
-//
-// ES6 {var, let, const}
-//
-main();
+if (fs.existsSync(options.file)) {
+  main(options.file); 
+} else {
+  console.error("File '" + options.file +  "' was not found!");
+};
 
-function main() {
-  fs.readFile("./example_index.ts", "utf8", (err, data) => {
+function main(inputFile) {
+  fs.readFile(inputFile, "utf8", (err, data) => {
     if (err) {
       console.error(err);
       return;

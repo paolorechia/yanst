@@ -4,7 +4,8 @@
   "description": "Yet another node swagger tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/test/",
+    "wtest": "mocha --watch src/test/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "yargs": "^13.2.4"
   },
   "devDependencies": {
-    "eslint": "^7.1.0"
+    "chai": "^4.2.0",
+    "eslint": "^7.1.0",
+    "mocha": "^8.0.1"
   }
 }

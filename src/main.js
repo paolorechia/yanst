@@ -50,50 +50,21 @@ function main(inputFile) {
     const indexVisitor = new IndexVisitor();
     symbols = indexVisitor.visit(tree);
     const requires = Object.keys(symbols["requires"]);
-
-    let endpoints = recursiveFileReader(0, requires.length, symbols);
-    console.log(endpoints)
-    endpoints.then( t => {
-      console.log("Resolving")
-      console.log(toJSON(t))
-    });
+    console.log(symbols);
+    const endpoints = requires.map( r => {
+      return readRouterFile(symbols["requires"][r]["filepath"] + ".ts");
+    })
+    setTimeout(() => console.log(endpoints), 3000 );
   });
 }
 
-function recursiveFileReader(index, maxIndex, symbols) {
-  return new Promise(function(resolve) {
-    if (index >= maxIndex) {
-      return resolve(symbols);
-    } else {
-      const requires = Object.keys(symbols["requires"]);
-      const key = requires[index];
-      const filepath = symbols["requires"][key]["filepath"] + ".ts";
-      readRouterFile(filepath)
-        .then((endpoints) => {
-          index++;
-          symbols["requires"][key]["endpoints"] = endpoints;
-          recursiveFileReader(index, maxIndex, symbols)
-            .then( endpoints => {
-              resolve(recursiveFileReader(index, maxIndex, symbols));
-            });
-        })
-        .catch((err) => {
-          console.log(err);
-          index++;
-          return resolve(recursiveFileReader(index, maxIndex, symbols));
-        });
-    }
-  })
-}
-
 function readRouterFile(filepath) {
-  return new Promise(function (resolve, reject) {
     fs.readFile(filepath, "utf8", (err, data) => {
       if (err) {
-        return reject(err);
+        return err;
       }
       if (!data) {
-        return reject("Could not open file " + filepath);
+        return "Could not open file " + filepath;
       }
       var input = data;
       const chars = new antlr4.InputStream(input);
@@ -101,16 +72,17 @@ function readRouterFile(filepath) {
       const tokens = new antlr4.CommonTokenStream(lexer);
       const parser = new RouterGrammarParser.RouterGrammarParser(tokens);
 
+      console.log(filepath)
       const tree = parser.routerfile();
       const routerVisitor = new RouterVisitor();
       const endpoints = routerVisitor.visit(tree);
       console.log(endpoints);
-      return resolve(endpoints)
+      return endpoints;
     });
-  });
 }
 
 function toJSON(symbols) {
   return JSON.stringify(symbols, null, 4);
 }
+
 

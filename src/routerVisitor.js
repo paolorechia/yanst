@@ -38,7 +38,7 @@ RouterVisitor.prototype.visitImport_ = function (ctx) {
 RouterVisitor.prototype.visitInstance = function (ctx) {
   const identifiers = ctx.IDENT();
   if (ctx.ROUTER && ctx.ROUTER() && !ctx.ARROW) {
-    console.log("Visit router instance");
+    console.log("Visit valid router instance");
     let variableName = '';
     if (identifiers) { if (identifiers.length) {
         variableName = identifiers[0].getText();
@@ -50,7 +50,7 @@ RouterVisitor.prototype.visitInstance = function (ctx) {
       variableName = 'this.' + variableName;
     }
     instanceVariable = variableName;
-    console.log(instanceVariable);
+    console.log("Express instance: ", instanceVariable);
   }
   return null;
 };
